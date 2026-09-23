@@ -54,7 +54,7 @@ python -m pytest -q tests
 
 ## Nến 1h VN30F1 → bảng G1..G4 và cột Dnxyw
 
-`vn30f1_hourly.py` lấy nến 1h VN30F1 (giờ Việt Nam) từ API công khai của DNSE (mặc định) hoặc VNDirect, không cần token.
+`vn30f1_hourly.py` lấy nến 1h VN30F1 (giờ Việt Nam) từ TradingView (mặc định, mã `HNX:VN30F1!`, qua websocket, không cần đăng nhập, tối đa 5000 nến ≈ 4 năm), hoặc từ API công khai của DNSE / VNDirect.
 
 | Cột | Ý nghĩa |
 |---|---|
@@ -69,11 +69,13 @@ python -m pytest -q tests
 Ví dụ `D0212` = G2 − G1 của thứ Hai; `D2212` = G2 thứ Hai − G1 của phiên trước đó 2 phiên. Thiếu nến thì ô để trống.
 
 ```bash
-# 1 năm gần nhất
-python vn30f1_hourly.py -o vn30f1_1h.csv
-# Khoảng ngày tùy chọn, nguồn VNDirect, lưu thêm nến thô
-python vn30f1_hourly.py --start 2025-01-01 --end 2026-09-22 --source vndirect \
-    --candles-out candles_1h.csv -o vn30f1_1h.csv
-# Dùng file nến 1h có sẵn (cột time,open,high,low,close; time theo giờ VN)
+# TradingView: toàn bộ nến 1h lấy được, lưu thêm nến thô
+python vn30f1_hourly.py --candles-out candles_1h.csv -o vn30f1_1h.csv
+# TradingView, lọc từ 2025-01-01
+python vn30f1_hourly.py --start 2025-01-01 -o vn30f1_1h.csv
+# Nguồn DNSE / VNDirect (mặc định 365 ngày gần nhất)
+python vn30f1_hourly.py --source vndirect --start 2025-01-01 -o vn30f1_1h.csv
+# Dùng file nến 1h có sẵn, ví dụ file "Export chart data" từ TradingView
+# (cột time,open,high,low,close; time là epoch giây hoặc giờ VN "YYYY-MM-DD HH:MM")
 python vn30f1_hourly.py --input candles_1h.csv -o vn30f1_1h.csv
 ```

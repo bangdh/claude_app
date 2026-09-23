@@ -60,3 +60,46 @@ def test_missing_candle_gives_blank():
     header, [row] = vh.build_table(vh.daily_prices(cs))
     r = dict(zip(header, row))
     assert r["G2"] == "" and r["D0212"] == "" and r["D0412"] != ""
+
+
+class FakeWS:
+    def __init__(self, frames):
+        self.frames, self.sent, self.closed = list(frames), [], False
+
+    def send(self, msg):
+        self.sent.append(msg)
+
+    def recv(self):
+        return self.frames.pop(0)
+
+    def close(self):
+        self.closed = True
+
+
+def test_tv_frame_roundtrip():
+    f = vh.tv_frame("set_auth_token", ["x"])
+    assert f.startswith("~m~") and vh.json.loads(vh.tv_split(f)[0])["m"] == "set_auth_token"
+
+
+def test_fetch_tradingview():
+    ts = int(datetime(2026, 9, 21, 9, tzinfo=vh.VN_TZ).timestamp())
+    upd = vh.tv_frame("timescale_update", ["cs", {"sds_1": {"s": [
+        {"i": 0, "v": [ts, 1900, 1905, 1898, 1902, 1000]},
+        {"i": 1, "v": [ts + 3600, 1902, 1906, 1901, 1904, 900]},
+    ]}}])
+    ws = FakeWS(["~m~4~m~~h~1", upd + vh.tv_frame("series_completed", ["cs", "sds_1"])])
+    candles = vh.fetch_tradingview(ws=ws)
+    assert [c["time"].hour for c in candles] == [9, 10]
+    assert candles[0]["open"] == 1900 and candles[1]["close"] == 1904
+    assert "~m~4~m~~h~1" in ws.sent  # heartbeat được gửi lại
+    assert any('"HNX:VN30F1!' in m for m in ws.sent) and ws.closed
+
+
+def test_fetch_tradingview_symbol_error():
+    ws = FakeWS([vh.tv_frame("symbol_error", ["cs", "sds_sym_1", "invalid"])])
+    try:
+        vh.fetch_tradingview(ws=ws)
+    except RuntimeError as exc:
+        assert "symbol_error" in str(exc)
+    else:
+        raise AssertionError("expected RuntimeError")

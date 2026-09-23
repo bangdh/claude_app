@@ -13,14 +13,16 @@ chỉ có giá trị ở các dòng có thứ = w (2 = thứ Hai ... 6 = thứ S
 Ví dụ: D0212 = G2 - G1 của cùng ngày, chỉ tính cho thứ Hai.
        D2212 = G2 hôm nay (thứ Hai) - G1 của phiên trước đó 2 phiên.
 
-Nguồn dữ liệu (API dạng TradingView, không cần token):
-  dnse     : services.entrade.com.vn (mặc định)
-  vndirect : dchart-api.vndirect.com.vn
+Nguồn dữ liệu (không cần token):
+  tradingview : websocket TradingView, mã HNX:VN30F1! (mặc định, tối đa 5000 nến)
+  dnse        : services.entrade.com.vn
+  vndirect    : dchart-api.vndirect.com.vn
 Hoặc đọc nến 1h có sẵn từ CSV (--input) với các cột time,open,high,low,close
 (time là giờ Việt Nam "YYYY-MM-DD HH:MM" hoặc epoch giây).
 
 Ví dụ:
-  python vn30f1_hourly.py --start 2025-01-01 -o vn30f1_1h.csv
+  python vn30f1_hourly.py -o vn30f1_1h.csv                      # TradingView
+  python vn30f1_hourly.py --source dnse --start 2025-01-01 -o vn30f1_1h.csv
   python vn30f1_hourly.py --input candles.csv -o vn30f1_1h.csv
 """
 
@@ -28,6 +30,10 @@ from __future__ import annotations
 
 import argparse
 import csv
+import json
+import random
+import re
+import string
 import sys
 import time
 from collections import defaultdict
@@ -111,6 +117,81 @@ def parse_udf(data: dict) -> list[dict]:
     ]
 
 
+# ---------------------------------------------------------------- TradingView
+
+TV_WS_URL = "wss://data.tradingview.com/socket.io/websocket?from=chart%2F"
+TV_SYMBOL = "HNX:VN30F1!"
+TV_MAX_BARS = 5000  # giới hạn số nến cho tài khoản khách
+
+
+def tv_frame(func: str, params: list) -> str:
+    body = json.dumps({"m": func, "p": params}, separators=(",", ":"))
+    return f"~m~{len(body)}~m~{body}"
+
+
+def tv_split(raw: str) -> list[str]:
+    """Tách các gói "~m~<len>~m~<payload>" trong một frame websocket."""
+    return [p for p in re.split(r"~m~\d+~m~", raw) if p]
+
+
+def fetch_tradingview(symbol: str = TV_SYMBOL, bars: int = TV_MAX_BARS,
+                      token: str = "unauthorized_user_token", ws=None,
+                      timeout: float = 30.0) -> list[dict]:
+    """Lấy `bars` nến 1h gần nhất từ TradingView qua websocket (không cần đăng nhập)."""
+    if ws is None:
+        import websocket  # pip install websocket-client
+        try:
+            ws = websocket.create_connection(
+                TV_WS_URL, timeout=timeout,
+                header={"Origin": "https://www.tradingview.com", "User-Agent": USER_AGENT})
+        except Exception as exc:
+            raise RuntimeError(f"Kết nối TradingView thất bại: {exc}") from exc
+    cs = "cs_" + "".join(random.choices(string.ascii_lowercase, k=12))
+    sym = json.dumps({"symbol": symbol, "adjustment": "splits", "session": "regular"})
+    for func, params in [
+        ("set_auth_token", [token]),
+        ("chart_create_session", [cs, ""]),
+        ("resolve_symbol", [cs, "sds_sym_1", "=" + sym]),
+        ("create_series", [cs, "sds_1", "s1", "sds_sym_1", "60", bars, ""]),
+    ]:
+        ws.send(tv_frame(func, params))
+
+    bars_by_time: dict[int, list] = {}
+    deadline = time.monotonic() + timeout
+    try:
+        while time.monotonic() < deadline:
+            raw = ws.recv()
+            for pkt in tv_split(raw):
+                if pkt.startswith("~h~"):  # heartbeat: gửi lại để giữ kết nối
+                    ws.send(f"~m~{len(pkt)}~m~{pkt}")
+                    continue
+                try:
+                    msg = json.loads(pkt)
+                except ValueError:
+                    continue
+                m, p = msg.get("m"), msg.get("p", [])
+                if m in ("timescale_update", "du") and len(p) > 1 and isinstance(p[1], dict):
+                    for bar in p[1].get("sds_1", {}).get("s", []):
+                        bars_by_time[int(bar["v"][0])] = bar["v"]
+                elif m in ("symbol_error", "series_error", "critical_error", "protocol_error"):
+                    raise RuntimeError(f"TradingView lỗi {m}: {p}")
+                elif m == "series_completed":
+                    deadline = 0
+    except RuntimeError:
+        raise
+    except Exception as exc:  # lỗi mạng / timeout của websocket-client
+        raise RuntimeError(f"Kết nối TradingView thất bại: {exc}") from exc
+    finally:
+        ws.close()
+    if not bars_by_time:
+        raise RuntimeError("TradingView không trả về nến nào")
+    return [
+        {"time": datetime.fromtimestamp(t, VN_TZ), "open": v[1], "high": v[2],
+         "low": v[3], "close": v[4]}
+        for t, v in sorted(bars_by_time.items())
+    ]
+
+
 def read_candles_csv(path: str) -> list[dict]:
     out = []
     with open(path, newline="", encoding="utf-8-sig") as f:
@@ -178,22 +259,32 @@ def parse_date(value: str) -> date:
 def main(argv=None) -> int:
     today = date.today()
     p = argparse.ArgumentParser(description="VN30F1 nến 1h → bảng G1..G4 và Dnxyw")
-    p.add_argument("--symbol", default="VN30F1M")
-    p.add_argument("--start", type=parse_date, default=today - timedelta(days=365))
+    p.add_argument("--symbol", help="Mã (mặc định HNX:VN30F1! với tradingview, VN30F1M với dnse/vndirect)")
+    p.add_argument("--start", type=parse_date,
+                   help="Ngày bắt đầu (mặc định: mọi nến TradingView trả về; 365 ngày với dnse/vndirect)")
     p.add_argument("--end", type=parse_date, default=today)
-    p.add_argument("--source", choices=sorted(SOURCES), default="dnse")
+    p.add_argument("--source", choices=["tradingview", *sorted(SOURCES)], default="tradingview")
+    p.add_argument("--bars", type=int, default=TV_MAX_BARS, help="Số nến 1h lấy từ TradingView")
+    p.add_argument("--tv-token", default="unauthorized_user_token",
+                   help="auth token TradingView (tài khoản trả phí lấy được nhiều nến hơn)")
     p.add_argument("--input", help="Đọc nến 1h từ CSV thay vì gọi API")
     p.add_argument("--candles-out", help="Lưu nến 1h thô ra CSV (giờ VN)")
     p.add_argument("-o", "--output", help="File CSV kết quả (mặc định in ra màn hình)")
     args = p.parse_args(argv)
 
     try:
-        candles = (read_candles_csv(args.input) if args.input
-                   else fetch_candles(args.symbol, args.start, args.end, args.source))
+        if args.input:
+            candles = read_candles_csv(args.input)
+        elif args.source == "tradingview":
+            candles = fetch_tradingview(args.symbol or TV_SYMBOL, args.bars, args.tv_token)
+        else:
+            args.start = args.start or today - timedelta(days=365)
+            candles = fetch_candles(args.symbol or "VN30F1M", args.start, args.end, args.source)
     except (RuntimeError, OSError, ValueError) as exc:
         print(f"Lỗi: {exc}", file=sys.stderr)
         return 1
-    candles = [c for c in candles if args.start <= c["time"].date() <= args.end]
+    candles = [c for c in candles
+               if (args.start is None or args.start <= c["time"].date()) and c["time"].date() <= args.end]
 
     if args.candles_out:
         with open(args.candles_out, "w", newline="", encoding="utf-8-sig") as f:
