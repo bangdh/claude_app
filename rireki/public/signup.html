@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" data-app="public">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Create workspace · Rireki</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+Myanmar:wght@400;600&family=Noto+Serif+JP:wght@500;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="auth">
+  <aside class="auth-side">
+    <a class="row-nowrap" href="landing.html" style="color:inherit"><div class="brand-mark">履</div><div><div class="brand-name">Rireki</div><div class="brand-sub" style="opacity:.8">履歴書クラウド</div></div></a>
+    <div>
+      <h2 data-i18n="signup.side_title">Your own workspace in two minutes.</h2>
+      <ul>
+        <li><svg class="ic"><use href="#i-check-circle"/></svg><span data-i18n="signup.side_1">A subdomain for your company, e.g. saoviet.rireki.app</span></li>
+        <li><svg class="ic"><use href="#i-check-circle"/></svg><span data-i18n="signup.side_2">You become the first admin and can invite more admins and users</span></li>
+        <li><svg class="ic"><use href="#i-check-circle"/></svg><span data-i18n="signup.side_3">Free for 30 candidates, upgrade whenever you need</span></li>
+      </ul>
+    </div>
+    <div class="small" style="opacity:.7" data-i18n="signup.side_quote">"We stopped emailing PDFs. Clients open one link, and we finally know who actually read the CVs." — a sending organization in Hà Nội</div>
+  </aside>
+  <main class="auth-main">
+    <div class="top"><a class="btn btn-ghost btn-sm" href="landing.html"><svg class="ic"><use href="#i-arrow-left"/></svg>rireki.app</a><div class="row-nowrap"><div data-lang-switch></div><button class="btn btn-ghost btn-icon" data-theme-toggle aria-label="Toggle theme"><svg class="ic"><use href="#i-moon"/></svg></button></div></div>
+    <form class="auth-card" style="max-width:520px" onsubmit="event.preventDefault(); location.href='../app/dashboard.html'">
+      <div><h1 data-i18n="signup.title">Create your company workspace</h1><p class="muted mt-8" data-i18n="signup.sub">For licensed sending organizations. You will be the first administrator.</p></div>
+      <div class="form-grid">
+        <div class="field span-2"><label class="label" for="cname"><span data-i18n="signup.company">Company name</span><span class="req">*</span></label><input id="cname" class="input" placeholder="Sao Việt Manpower JSC" data-subdomain-source></div>
+        <div class="field"><label class="label" for="country"><span data-i18n="signup.country">Country</span><span class="req">*</span></label><select id="country" class="select"><option>🇻🇳 Vietnam</option><option>🇲🇲 Myanmar</option><option>🇧🇩 Bangladesh</option><option>🇮🇩 Indonesia</option><option data-i18n="common.other">Other</option></select></div>
+        <div class="field"><label class="label" for="lang" data-i18n="signup.language">Workspace language</label><select id="lang" class="select"><option>Tiếng Việt</option><option>English</option><option>日本語</option><option>မြန်မာ</option><option>Bahasa Indonesia</option></select></div>
+        <div class="field span-2"><label class="label" for="sub"><span data-i18n="signup.subdomain">Workspace address</span><span class="req">*</span></label><div class="input-group"><input id="sub" class="input mono" placeholder="saoviet" data-subdomain-input><span class="addon">.rireki.app</span></div><span class="hint" id="subHint" data-i18n="signup.subdomain_hint">Lowercase letters, numbers and hyphens. This is where your team signs in and the domain your clients will see.</span></div>
+        <div class="field"><label class="label" for="aname"><span data-i18n="signup.admin_name">Your name</span><span class="req">*</span></label><input id="aname" class="input" placeholder="Nguyễn Thị Hương"></div>
+        <div class="field"><label class="label" for="amail"><span data-i18n="auth.email">Work email</span><span class="req">*</span></label><input id="amail" class="input" type="email" placeholder="huong@saoviet.vn"></div>
+        <div class="field span-2"><label class="label" for="apw"><span data-i18n="auth.password">Password</span><span class="req">*</span></label><div class="input-wrap" style="display:flex"><input id="apw" class="input" type="password" style="padding-left:12px;padding-right:40px"><button type="button" class="btn btn-ghost btn-icon btn-sm trail" data-pw-toggle="apw" aria-label="Show"><svg class="ic"><use href="#i-eye"/></svg></button></div><span class="hint" data-i18n="signup.pw_hint">At least 10 characters. Two-factor authentication is set up on first sign-in.</span></div>
+      </div>
+      <label class="check"><input type="checkbox"><span><span data-i18n="signup.agree">I agree to the</span> <a href="#" data-i18n="landing.terms">Terms</a> <span data-i18n="common.and">and</span> <a href="#" data-i18n="landing.privacy">Privacy Policy</a>, <span data-i18n="signup.agree2">and confirm my company holds a valid sending license.</span></span></label>
+      <button class="btn btn-primary btn-lg btn-block" type="submit" data-i18n="signup.create">Create workspace</button>
+      <p class="small muted center"><span data-i18n="signup.have_account">Already have a workspace?</span> <a href="../app/login.html" data-i18n="landing.login">Sign in</a></p>
+    </form>
+  </main>
+</div>
+<div class="toasts" id="toasts"></div>
+<script src="../assets/i18n.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

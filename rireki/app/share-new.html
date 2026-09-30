@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en" data-app="tenant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Create share link · Rireki</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+Myanmar:wght@400;600&family=Noto+Serif+JP:wght@500;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar" id="sidebar" aria-label="Main navigation">
+  <div class="brand"><div class="brand-mark">履</div><div><div class="brand-name">Rireki</div><div class="brand-sub">履歴書クラウド</div></div></div>
+  <div class="tenant"><span class="avatar">SV</span><div class="grow"><div class="tenant-name truncate">Sao Việt Manpower</div><div class="tenant-domain truncate">saoviet.rireki.app</div></div></div>
+  <nav class="nav">
+    <a href="dashboard.html"><svg class="ic"><use href="#i-home"/></svg><span data-i18n="nav.dashboard">Dashboard</span></a>
+    <a href="candidates.html"><svg class="ic"><use href="#i-users"/></svg><span data-i18n="nav.candidates">Candidates</span><span class="count">182</span></a>
+    <a href="shares.html" class="active"><svg class="ic"><use href="#i-link"/></svg><span data-i18n="nav.shares">Share links</span><span class="count">14</span></a>
+  </nav>
+  <div class="nav-group eyebrow" data-i18n="nav.manage">Manage</div>
+  <nav class="nav">
+    <a href="settings-members.html"><svg class="ic"><use href="#i-user-check"/></svg><span data-i18n="nav.members">Members</span></a>
+    <a href="settings-company.html"><svg class="ic"><use href="#i-settings"/></svg><span data-i18n="nav.settings">Settings</span></a>
+    <a href="settings-company.html#audit"><svg class="ic"><use href="#i-list"/></svg><span data-i18n="nav.audit">Audit log</span></a>
+  </nav>
+  <div class="sidebar-foot">
+    <div class="usage"><div class="row between"><span class="strong">Pro</span><span class="faint nums">182 / 500</span></div><div class="bar"><i style="width:36%"></i></div><span class="faint" data-i18n="nav.usage">candidates used</span></div>
+    <div class="me"><span class="avatar">NH</span><div><div class="name">Nguyễn Thị Hương</div><div class="role" data-i18n="role.admin">Admin</div></div></div>
+  </div>
+</aside>
+<div class="app-main">
+<header class="topbar">
+  <button class="btn btn-ghost btn-icon hamburger" data-nav-toggle aria-label="Menu"><svg class="ic"><use href="#i-menu"/></svg></button>
+  <div class="search input-wrap"><svg class="ic"><use href="#i-search"/></svg><input class="input input-sm" placeholder="Search code, name, katakana…" data-i18n-placeholder="nav.search"></div>
+  <div class="spacer"></div>
+  <div data-lang-switch></div>
+  <button class="btn btn-ghost btn-icon" data-theme-toggle aria-label="Toggle theme"><svg class="ic"><use href="#i-moon"/></svg></button>
+  <button class="btn btn-ghost btn-icon" aria-label="Notifications" style="position:relative"><svg class="ic"><use href="#i-bell"/></svg><span style="position:absolute;top:7px;right:8px;width:7px;height:7px;border-radius:50%;background:var(--vermilion)"></span></button>
+  <details class="menu">
+    <summary class="btn btn-ghost" style="padding:0 6px"><span class="avatar avatar-sm">NH</span><svg class="ic ic-sm"><use href="#i-chev-down"/></svg></summary>
+    <div class="menu-list">
+      <div class="menu-head">huong.nguyen@saoviet.vn</div>
+      <a href="#"><svg class="ic"><use href="#i-user"/></svg><span data-i18n="nav.profile">My profile</span></a>
+      <a href="settings-company.html"><svg class="ic"><use href="#i-settings"/></svg><span data-i18n="nav.settings">Settings</span></a>
+      <hr>
+      <a href="login.html"><svg class="ic"><use href="#i-logout"/></svg><span data-i18n="nav.logout">Sign out</span></a>
+    </div>
+  </details>
+</header>
+<main class="main" id="main">
+  <div class="crumbs"><a href="shares.html" data-i18n="shares.title">Share links</a><span>/</span><span data-i18n="shares.new">Create share link</span></div>
+  <div class="page-header">
+    <div><h1 data-i18n="shares.new">Create share link</h1><p class="sub" data-i18n="sharenew.sub">Pick candidates from your database, choose how the client may view them, then send the link.</p></div>
+  </div>
+  <div class="stepper mb-24" data-stepper>
+    <button type="button" class="step active" data-step="1"><span class="n">1</span><span class="t" data-i18n="sharenew.step1">Pick candidates</span></button>
+    <button type="button" class="step" data-step="2"><span class="n">2</span><span class="t" data-i18n="sharenew.step2">Access & protection</span></button>
+    <button type="button" class="step" data-step="3"><span class="n">3</span><span class="t" data-i18n="sharenew.step3">Send</span></button>
+  </div>
+
+  <!-- STEP 1 -->
+  <div data-step-panel="1">
+    <div class="grid grid-main-aside">
+      <section class="card">
+        <div class="table-toolbar">
+          <div class="search input-wrap"><svg class="ic"><use href="#i-search"/></svg><input class="input input-sm" placeholder="Code, name, katakana…" data-i18n-placeholder="cand.search_ph"></div>
+          <select class="select select-sm" style="width:auto"><option data-i18n="cand.job">Job type</option><option selected>溶接</option><option>介護</option><option>建設</option></select>
+          <select class="select select-sm" style="width:auto"><option data-i18n="cand.nationality">Nationality</option><option>🇻🇳 Vietnam</option><option>🇲🇲 Myanmar</option></select>
+          <select class="select select-sm" style="width:auto"><option>JLPT</option><option>N3+</option><option>N4+</option></select>
+          <button class="filter-chip active"><span data-i18n="status.available">Available</span></button>
+        </div>
+        <div class="table-wrap"><table class="table" data-selectable>
+          <thead><tr><th style="width:36px"><input type="checkbox" data-select-all aria-label="Select all"></th><th data-i18n="cand.candidate">Candidate</th><th data-i18n="cand.code">Code</th><th data-i18n="cand.gender_age">Gender · Age</th><th>JLPT</th><th data-i18n="cand.video">Video</th><th data-i18n="common.status">Status</th></tr></thead>
+          <tbody>
+            <tr><td><input type="checkbox" checked></td><td><div class="person"><span class="avatar-photo">NA</span><div><div class="n">Nguyễn Văn An</div><div class="k">グエン・バン・アン</div></div></div></td><td class="mono">SV-2024-0182</td><td><span data-i18n="gender.m">Male</span> · 24</td><td><span class="badge badge-primary">N4</span></td><td class="nums">3</td><td><span class="badge badge-info badge-dot" data-i18n="status.available">Available</span></td></tr>
+            <tr><td><input type="checkbox" checked></td><td><div class="person"><span class="avatar-photo">MĐ</span><div><div class="n">Phạm Minh Đức</div><div class="k">ファム・ミン・ドゥック</div></div></div></td><td class="mono">SV-2024-0215</td><td><span data-i18n="gender.m">Male</span> · 23</td><td><span class="badge badge-primary">N3</span></td><td class="nums">2</td><td><span class="badge badge-info badge-dot" data-i18n="status.available">Available</span></td></tr>
+            <tr><td><input type="checkbox" checked></td><td><div class="person"><span class="avatar-photo">HL</span><div><div class="n">Lê Hoàng Long</div><div class="k">レ・ホアン・ロン</div></div></div></td><td class="mono">SV-2024-0224</td><td><span data-i18n="gender.m">Male</span> · 27</td><td><span class="badge badge-primary">N4</span></td><td class="nums">1</td><td><span class="badge badge-info badge-dot" data-i18n="status.available">Available</span></td></tr>
+            <tr><td><input type="checkbox" checked></td><td><div class="person"><span class="avatar-photo">VH</span><div><div class="n">Trần Văn Hùng</div><div class="k">チャン・バン・フン</div></div></div></td><td class="mono">SV-2024-0188</td><td><span data-i18n="gender.m">Male</span> · 25</td><td><span class="badge badge-primary">N4</span></td><td class="nums">1</td><td><span class="badge badge-info badge-dot" data-i18n="status.available">Available</span></td></tr>
+            <tr><td><input type="checkbox" checked></td><td><div class="person"><span class="avatar-photo">ĐA</span><div><div class="n">Vũ Đức Anh</div><div class="k">ヴー・ドゥック・アイン</div></div></div></td><td class="mono">SV-2024-0201</td><td><span data-i18n="gender.m">Male</span> · 22</td><td><span class="badge badge-primary">N5</span></td><td class="nums">2</td><td><span class="badge badge-info badge-dot" data-i18n="status.available">Available</span></td></tr>
+            <tr><td><input type="checkbox"></td><td><div class="person"><span class="avatar-photo">QT</span><div><div class="n">Hoàng Quốc Trung</div><div class="k">ホアン・クオック・チュン</div></div></div></td><td class="mono">SV-2024-0176</td><td><span data-i18n="gender.m">Male</span> · 28</td><td><span class="badge badge-primary">N4</span></td><td class="nums" style="color:var(--warning)">0</td><td><span class="badge badge-info badge-dot" data-i18n="status.available">Available</span></td></tr>
+            <tr><td><input type="checkbox"></td><td><div class="person"><span class="avatar-photo">AK</span><div><div class="n">Aung Ko Ko</div><div class="k">アウン・コー・コー</div></div></div></td><td class="mono">SV-2024-0203</td><td><span data-i18n="gender.m">Male</span> · 26</td><td><span class="badge badge-primary">N5</span></td><td class="nums">2</td><td><span class="badge badge-info badge-dot" data-i18n="status.available">Available</span></td></tr>
+          </tbody></table></div>
+        <div class="pagination"><span><span data-i18n="common.showing">Showing</span> 1–7 <span data-i18n="common.of">of</span> 23 <span data-i18n="sharenew.matching">matching</span></span><div class="pages"><button class="active">1</button><button>2</button><button>3</button><button>4</button></div><span></span></div>
+      </section>
+      <aside class="stack">
+        <section class="card">
+          <div class="card-header"><h3><span data-i18n="common.selected">Selected</span> <span class="badge badge-primary">5</span></h3><button class="btn btn-sm btn-ghost" data-i18n="common.clear">Clear</button></div>
+          <div class="card-body stack" style="gap:8px">
+            <div class="row between"><div class="person"><span class="avatar avatar-sm">NA</span><div><div class="n small">Nguyễn Văn An</div><div class="k">SV-2024-0182</div></div></div><button class="btn btn-ghost btn-icon btn-sm" aria-label="Remove"><svg class="ic"><use href="#i-x"/></svg></button></div>
+            <div class="row between"><div class="person"><span class="avatar avatar-sm">MĐ</span><div><div class="n small">Phạm Minh Đức</div><div class="k">SV-2024-0215</div></div></div><button class="btn btn-ghost btn-icon btn-sm" aria-label="Remove"><svg class="ic"><use href="#i-x"/></svg></button></div>
+            <div class="row between"><div class="person"><span class="avatar avatar-sm">HL</span><div><div class="n small">Lê Hoàng Long</div><div class="k">SV-2024-0224</div></div></div><button class="btn btn-ghost btn-icon btn-sm" aria-label="Remove"><svg class="ic"><use href="#i-x"/></svg></button></div>
+            <div class="row between"><div class="person"><span class="avatar avatar-sm">VH</span><div><div class="n small">Trần Văn Hùng</div><div class="k">SV-2024-0188</div></div></div><button class="btn btn-ghost btn-icon btn-sm" aria-label="Remove"><svg class="ic"><use href="#i-x"/></svg></button></div>
+            <div class="row between"><div class="person"><span class="avatar avatar-sm">ĐA</span><div><div class="n small">Vũ Đức Anh</div><div class="k">SV-2024-0201</div></div></div><button class="btn btn-ghost btn-icon btn-sm" aria-label="Remove"><svg class="ic"><use href="#i-x"/></svg></button></div>
+            <p class="hint" data-i18n="sharenew.order_hint">Drag to set the order the client sees. Selecting exactly one candidate creates a single-candidate link that opens straight on their 履歴書.</p>
+          </div>
+          <div class="card-footer"><button class="btn btn-primary btn-block" type="button" data-step-go="next"><span data-i18n="common.next">Next</span><svg class="ic"><use href="#i-arrow-right"/></svg></button></div>
+        </section>
+      </aside>
+    </div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div data-step-panel="2" hidden>
+    <form class="grid grid-main-aside" onsubmit="event.preventDefault()">
+      <div class="stack">
+        <section class="card">
+          <div class="card-header"><h3 data-i18n="sharenew.basics">Link & client</h3></div>
+          <div class="card-body form-grid">
+            <div class="field span-2"><label class="label"><span data-i18n="shares.link_name">Link name (internal)</span><span class="req">*</span></label><input class="input" value="ヤマト建設様 溶接候補者"></div>
+            <div class="field"><label class="label" data-i18n="sharenew.client_company">Client company</label><input class="input" value="株式会社ヤマト建設" list="clients"><datalist id="clients"><option>株式会社ヤマト建設</option><option>東海協同組合</option><option>さくら介護グループ</option></datalist></div>
+            <div class="field"><label class="label" data-i18n="sharenew.client_contact">Contact name</label><input class="input" value="田中 健一"></div>
+            <div class="field"><label class="label" data-i18n="sharenew.client_email">Contact email</label><input class="input" type="email" value="tanaka@yamato-k.co.jp"></div>
+            <div class="field"><label class="label" data-i18n="sharenew.viewer_lang">Viewer page language</label><select class="select"><option>日本語</option><option>English</option><option>Tiếng Việt</option><option>မြန်မာ</option><option>Bahasa Indonesia</option></select></div>
+            <div class="field span-2"><label class="label" data-i18n="sharenew.message">Message shown to the client</label><textarea class="textarea" style="min-height:70px">田中様　お世話になっております。溶接職種の候補者5名の履歴書と自己紹介動画をご確認ください。</textarea></div>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="card-header"><h3 data-i18n="sharenew.access">Access</h3></div>
+          <div class="card-body stack-lg">
+            <div class="row between" style="align-items:flex-start;gap:16px"><div><b data-i18n="sharenew.pw_t">Password protection</b><p class="hint" data-i18n="sharenew.pw_d">Anyone with the link must enter this password. Send it through a different channel than the link (phone, LINE, separate email).</p></div><label class="switch"><input type="checkbox" checked id="pwToggle"><span class="track"></span></label></div>
+            <div class="row" style="max-width:480px"><div class="input-wrap grow" style="display:flex"><input class="input mono" id="pwField" value="Yk7-mQ2p-4Wv" style="padding-left:12px;padding-right:76px"><span class="trail row-nowrap" style="gap:0"><button class="btn btn-ghost btn-icon btn-sm" type="button" data-pw-toggle="pwField" aria-label="Show"><svg class="ic"><use href="#i-eye"/></svg></button><button class="btn btn-ghost btn-icon btn-sm" type="button" data-copy="Yk7-mQ2p-4Wv" aria-label="Copy"><svg class="ic"><use href="#i-copy"/></svg></button></span></div><button class="btn" type="button"><svg class="ic"><use href="#i-refresh"/></svg><span data-i18n="sharenew.regenerate">Regenerate</span></button></div>
+            <hr style="border:0;border-top:1px solid var(--border);margin:0">
+            <div class="row between" style="align-items:flex-start;gap:16px"><div><b data-i18n="sharenew.identity_t">Ask viewers for name and email</b><p class="hint" data-i18n="sharenew.identity_d">Required for per-person tracking and for the watermark. Without it, views are logged as anonymous with IP and device only.</p></div><label class="switch"><input type="checkbox" checked><span class="track"></span></label></div>
+            <div class="field" style="max-width:480px"><label class="label" data-i18n="sharenew.domains">Restrict to email domains (optional)</label><div class="row"><span class="chip">@yamato-k.co.jp<button type="button" aria-label="Remove"><svg class="ic ic-sm"><use href="#i-x"/></svg></button></span><input class="input input-sm" placeholder="@example.co.jp" style="width:180px"></div></div>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="card-header"><h3 data-i18n="sharenew.permissions">Download permission</h3></div>
+          <div class="card-body stack">
+            <div class="radio-cards">
+              <label class="radio-card"><input type="radio" name="dl" checked><div><div class="t"><span data-i18n="sharenew.viewonly_t">View only</span> <span class="badge badge-primary" data-i18n="common.recommended">Recommended</span></div><div class="d" data-i18n="sharenew.viewonly_d">No PDF or video file is ever sent to the browser. Pages render as protected images with a watermark showing the viewer's name, email and time. Right-click, print, save and text selection are disabled, and the page blurs when the window loses focus.</div></div></label>
+              <label class="radio-card"><input type="radio" name="dl"><div><div class="t" data-i18n="sharenew.download_t">Allow download</div><div class="d" data-i18n="sharenew.download_d">The client can download the 履歴書 as PDF and the video and document files. Every download is logged with the viewer's identity.</div></div></label>
+            </div>
+            <div class="callout callout-warning"><svg class="ic"><use href="#i-camera-off"/></svg><div data-i18n="sharenew.capture_note">Screen capture cannot be fully blocked by a web browser. View-only mode makes copying hard and makes every screenshot traceable through the watermark; the mobile app additionally blocks screenshots on Android and detects them on iOS.</div></div>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="card-header"><h3 data-i18n="sharenew.expiry">Expiry & limits</h3></div>
+          <div class="card-body form-grid">
+            <div class="field"><label class="label" data-i18n="sharenew.expires_on">Link expires on</label><input class="input" type="date" value="2026-10-03"><div class="row mt-8" style="gap:6px"><button class="filter-chip" type="button">7 <span data-i18n="common.days">days</span></button><button class="filter-chip" type="button">14 <span data-i18n="common.days">days</span></button><button class="filter-chip" type="button">30 <span data-i18n="common.days">days</span></button><button class="filter-chip" type="button" data-i18n="sharenew.no_expiry">No expiry</button></div></div>
+            <div class="field"><label class="label" data-i18n="sharenew.max_views">Maximum number of views (optional)</label><input class="input" placeholder="Unlimited" data-i18n-placeholder="common.unlimited"><span class="hint" data-i18n="sharenew.max_views_hint">Counted per opening of the link, not per candidate.</span></div>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="card-header"><h3 data-i18n="sharenew.sections">What the client can see</h3></div>
+          <div class="card-body grid grid-2" style="gap:12px">
+            <label class="switch"><input type="checkbox" checked><span class="track"></span><span><span data-i18n="form.photo">Photo</span></span></label>
+            <label class="switch"><input type="checkbox"><span class="track"></span><span><span data-i18n="sharenew.sec_contact">Contact info (phone, email, address)</span> <span class="hint" data-i18n="sharenew.sec_contact_hint">— hidden by default so clients contact you, not the candidate</span></span></label>
+            <label class="switch"><input type="checkbox" checked><span class="track"></span><span data-i18n="form.family">Family members</span></label>
+            <label class="switch"><input type="checkbox" checked><span class="track"></span><span data-i18n="form.health">Health & physical</span></label>
+            <label class="switch"><input type="checkbox" checked><span class="track"></span><span data-i18n="form.videos">Self-introduction videos</span></label>
+            <label class="switch"><input type="checkbox"><span class="track"></span><span data-i18n="sharenew.sec_docs">Documents marked "Shareable"</span></label>
+            <label class="switch"><input type="checkbox" checked><span class="track"></span><span data-i18n="sharenew.sec_interested">Let the client mark "Interested" and leave a comment</span></label>
+            <label class="switch"><input type="checkbox" checked><span class="track"></span><span data-i18n="sharenew.sec_notify">Email me on first view and on "Interested"</span></label>
+          </div>
+        </section>
+      </div>
+      <aside>
+        <div class="card sticky-aside">
+          <div class="card-header"><h3 data-i18n="common.summary">Summary</h3></div>
+          <div class="card-body stack" style="gap:10px">
+            <dl class="kv"><dt data-i18n="cand.title">Candidates</dt><dd>5 · 溶接</dd><dt data-i18n="shares.client">Client</dt><dd>株式会社ヤマト建設</dd><dt data-i18n="sharenew.access">Access</dt><dd><span data-i18n="shares.password">Password</span> + <span data-i18n="sharenew.identity_short">identity</span></dd><dt data-i18n="shares.protection">Protection</dt><dd><span class="badge badge-warning"><svg class="ic"><use href="#i-eye"/></svg><span data-i18n="shares.view_only">View only</span></span></dd><dt data-i18n="common.expires">Expires</dt><dd>3 Oct 2026</dd><dt data-i18n="sharenew.hidden">Hidden</dt><dd data-i18n="sharenew.hidden_v">Contact info, documents</dd></dl>
+          </div>
+          <div class="card-footer between"><button class="btn" type="button" data-step-go="prev"><svg class="ic"><use href="#i-arrow-left"/></svg><span data-i18n="common.back">Back</span></button><button class="btn btn-primary" type="button" data-step-go="next"><svg class="ic"><use href="#i-link"/></svg><span data-i18n="sharenew.create">Create link</span></button></div>
+        </div>
+      </aside>
+    </form>
+  </div>
+
+  <!-- STEP 3 -->
+  <div data-step-panel="3" hidden>
+    <div class="grid grid-main-aside">
+      <div class="stack">
+        <div class="callout callout-success"><svg class="ic"><use href="#i-check-circle"/></svg><div><b data-i18n="sharenew.created_t">Share link created</b><br><span data-i18n="sharenew.created_d">Send the link and the password through different channels. You can revoke or extend the link at any time from its tracking page.</span></div></div>
+        <section class="card">
+          <div class="card-body stack">
+            <div class="field"><label class="label" data-i18n="sharenew.link_url">Link</label><div class="link-box"><span class="url">https://saoviet.rireki.app/s/8fK2mQx</span><button class="btn btn-sm" data-copy="https://saoviet.rireki.app/s/8fK2mQx"><svg class="ic"><use href="#i-copy"/></svg><span data-i18n="common.copy_link">Copy link</span></button></div></div>
+            <div class="field"><label class="label" data-i18n="auth.password">Password</label><div class="link-box"><span class="url" id="pwShow">Yk7-mQ2p-4Wv</span><button class="btn btn-sm" data-copy="Yk7-mQ2p-4Wv"><svg class="ic"><use href="#i-copy"/></svg><span data-i18n="common.copy_password">Copy password</span></button></div></div>
+            <div class="row" style="gap:16px;align-items:flex-start"><div class="qr" aria-label="QR code"></div><div class="stack" style="gap:6px"><b data-i18n="sharenew.qr_t">QR code</b><p class="small muted" data-i18n="sharenew.qr_d">Useful when meeting the client in person or for printed proposals. The password is still required.</p><button class="btn btn-sm" style="align-self:flex-start"><svg class="ic"><use href="#i-download"/></svg><span data-i18n="sharenew.qr_dl">Download PNG</span></button></div></div>
+          </div>
+        </section>
+        <section class="card">
+          <div class="card-header"><h3 data-i18n="sharenew.email_t">Send by email</h3><span class="small muted" data-i18n="sharenew.email_from">from huong.nguyen@saoviet.vn</span></div>
+          <div class="card-body stack">
+            <div class="form-grid"><div class="field"><label class="label" data-i18n="sharenew.to">To</label><input class="input" value="tanaka@yamato-k.co.jp"></div><div class="field"><label class="label" data-i18n="sharenew.subject">Subject</label><input class="input" value="【Sao Việt Manpower】溶接候補者5名 履歴書のご送付"></div></div>
+            <div class="field"><label class="label" data-i18n="sharenew.body">Message</label><textarea class="textarea" style="min-height:150px">株式会社ヤマト建設
+田中 健一 様
+
+お世話になっております。Sao Việt Manpowerの Nguyễn Thị Hương です。
+溶接職種の候補者5名の履歴書・自己紹介動画を下記リンクよりご確認ください。
+
+https://saoviet.rireki.app/s/8fK2mQx
+（閲覧期限：2026年10月3日）
+
+パスワードは別途お電話・LINEにてお伝えいたします。
+ご不明点がございましたらお気軽にご連絡ください。</textarea></div>
+            <label class="check"><input type="checkbox"><span data-i18n="sharenew.include_pw">Include the password in this email (not recommended)</span></label>
+          </div>
+          <div class="card-footer between"><button class="btn" data-copy="https://saoviet.rireki.app/s/8fK2mQx"><svg class="ic"><use href="#i-copy"/></svg><span data-i18n="sharenew.copy_message">Copy message for LINE / Zalo</span></button><button class="btn btn-primary"><svg class="ic"><use href="#i-send"/></svg><span data-i18n="sharenew.send_email">Send email</span></button></div>
+        </section>
+      </div>
+      <aside class="stack">
+        <section class="card"><div class="card-body stack">
+          <a class="btn btn-block" href="../viewer/gate.html"><svg class="ic"><use href="#i-external"/></svg><span data-i18n="sharenew.preview">Preview as client</span></a>
+          <a class="btn btn-block" href="share-detail.html"><svg class="ic"><use href="#i-activity"/></svg><span data-i18n="shares.tracking">View tracking</span></a>
+          <a class="btn btn-block btn-ghost" href="shares.html" data-i18n="sharenew.back_list">Back to share links</a>
+        </div></section>
+        <section class="card"><div class="card-header"><h3 data-i18n="common.summary">Summary</h3></div><div class="card-body"><dl class="kv"><dt data-i18n="shares.link_name">Name</dt><dd>ヤマト建設様 溶接候補者</dd><dt data-i18n="cand.title">Candidates</dt><dd>5</dd><dt data-i18n="shares.protection">Protection</dt><dd><span data-i18n="shares.password">Password</span> · <span data-i18n="shares.view_only">View only</span></dd><dt data-i18n="common.expires">Expires</dt><dd>3 Oct 2026</dd><dt data-i18n="common.created_by">Created by</dt><dd>Nguyễn Thị Hương</dd></dl></div></section>
+      </aside>
+    </div>
+  </div>
+</main>
+</div>
+</div>
+<div class="scrim" data-nav-close></div>
+<div class="toasts" id="toasts"></div>
+<script src="../assets/i18n.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en" data-app="tenant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Import CV · Rireki</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+Myanmar:wght@400;600&family=Noto+Serif+JP:wght@500;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar" id="sidebar" aria-label="Main navigation">
+  <div class="brand"><div class="brand-mark">履</div><div><div class="brand-name">Rireki</div><div class="brand-sub">履歴書クラウド</div></div></div>
+  <div class="tenant"><span class="avatar">SV</span><div class="grow"><div class="tenant-name truncate">Sao Việt Manpower</div><div class="tenant-domain truncate">saoviet.rireki.app</div></div></div>
+  <nav class="nav">
+    <a href="dashboard.html"><svg class="ic"><use href="#i-home"/></svg><span data-i18n="nav.dashboard">Dashboard</span></a>
+    <a href="candidates.html" class="active"><svg class="ic"><use href="#i-users"/></svg><span data-i18n="nav.candidates">Candidates</span><span class="count">182</span></a>
+    <a href="shares.html"><svg class="ic"><use href="#i-link"/></svg><span data-i18n="nav.shares">Share links</span><span class="count">14</span></a>
+  </nav>
+  <div class="nav-group eyebrow" data-i18n="nav.manage">Manage</div>
+  <nav class="nav">
+    <a href="settings-members.html"><svg class="ic"><use href="#i-user-check"/></svg><span data-i18n="nav.members">Members</span></a>
+    <a href="settings-company.html"><svg class="ic"><use href="#i-settings"/></svg><span data-i18n="nav.settings">Settings</span></a>
+    <a href="settings-company.html#audit"><svg class="ic"><use href="#i-list"/></svg><span data-i18n="nav.audit">Audit log</span></a>
+  </nav>
+  <div class="sidebar-foot">
+    <div class="usage"><div class="row between"><span class="strong">Pro</span><span class="faint nums">182 / 500</span></div><div class="bar"><i style="width:36%"></i></div><span class="faint" data-i18n="nav.usage">candidates used</span></div>
+    <div class="me"><span class="avatar">NH</span><div><div class="name">Nguyễn Thị Hương</div><div class="role" data-i18n="role.admin">Admin</div></div></div>
+  </div>
+</aside>
+<div class="app-main">
+<header class="topbar">
+  <button class="btn btn-ghost btn-icon hamburger" data-nav-toggle aria-label="Menu"><svg class="ic"><use href="#i-menu"/></svg></button>
+  <div class="search input-wrap"><svg class="ic"><use href="#i-search"/></svg><input class="input input-sm" placeholder="Search code, name, katakana…" data-i18n-placeholder="nav.search"></div>
+  <div class="spacer"></div>
+  <div data-lang-switch></div>
+  <button class="btn btn-ghost btn-icon" data-theme-toggle aria-label="Toggle theme"><svg class="ic"><use href="#i-moon"/></svg></button>
+  <button class="btn btn-ghost btn-icon" aria-label="Notifications" style="position:relative"><svg class="ic"><use href="#i-bell"/></svg><span style="position:absolute;top:7px;right:8px;width:7px;height:7px;border-radius:50%;background:var(--vermilion)"></span></button>
+  <details class="menu">
+    <summary class="btn btn-ghost" style="padding:0 6px"><span class="avatar avatar-sm">NH</span><svg class="ic ic-sm"><use href="#i-chev-down"/></svg></summary>
+    <div class="menu-list">
+      <div class="menu-head">huong.nguyen@saoviet.vn</div>
+      <a href="#"><svg class="ic"><use href="#i-user"/></svg><span data-i18n="nav.profile">My profile</span></a>
+      <a href="settings-company.html"><svg class="ic"><use href="#i-settings"/></svg><span data-i18n="nav.settings">Settings</span></a>
+      <hr>
+      <a href="login.html"><svg class="ic"><use href="#i-logout"/></svg><span data-i18n="nav.logout">Sign out</span></a>
+    </div>
+  </details>
+</header>
+<main class="main" id="main">
+  <div class="crumbs"><a href="candidates.html" data-i18n="cand.title">Candidates</a><span>/</span><a href="candidate-new.html" data-i18n="cand.add">Add candidate</a><span>/</span><span data-i18n="cand.import">Import CV file</span></div>
+  <div class="page-header">
+    <div><h1 data-i18n="cand.import">Import CV file</h1><p class="sub" data-i18n="import.sub">Rireki reads the uploaded document and fills the 履歴書 fields. Confirm the highlighted fields before saving.</p></div>
+  </div>
+
+  <div class="stepper mb-24" aria-label="Progress">
+    <div class="step done"><span class="n"><svg class="ic ic-sm"><use href="#i-check"/></svg></span><span class="t" data-i18n="import.step_upload">Upload file</span></div>
+    <div class="step active"><span class="n">2</span><span class="t" data-i18n="import.step_review">Review extracted data</span></div>
+    <div class="step"><span class="n">3</span><span class="t" data-i18n="import.step_save">Save candidate</span></div>
+  </div>
+
+  <div class="callout callout-success mb-16"><svg class="ic"><use href="#i-sparkles"/></svg><div><b>CV_Su_Su_Hlaing.pdf</b> · 2 <span data-i18n="import.pages">pages</span> · <span data-i18n="import.detected">detected languages</span>: မြန်မာ + English<br><span data-i18n="import.result">31 fields extracted · 4 need your review (marked in yellow). Fields we could not find are left empty.</span></div></div>
+
+  <div class="grid grid-aside-main" style="grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr)">
+    <div class="stack">
+      <div class="doc-preview">
+        <div class="row between"><span class="strong small" data-i18n="import.original">Original document</span><span class="row-nowrap"><button class="btn btn-sm btn-ghost btn-icon"><svg class="ic"><use href="#i-chev-left"/></svg></button><span class="small nums">1 / 2</span><button class="btn btn-sm btn-ghost btn-icon"><svg class="ic"><use href="#i-chev-right"/></svg></button></span></div>
+        <div class="doc-page">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px"><div style="flex:1"><div class="l m" style="height:9px;width:45%;background:#333"></div><div class="l s"></div><div class="l"></div><div class="l m"></div></div><div style="width:44px;height:56px;background:#DDD;border:1px solid #BBB"></div></div>
+          <div class="l" style="margin-top:10px"></div><div class="l m"></div><div class="l s hl"></div><div class="l"></div>
+          <div style="margin-top:8px;border-top:1px solid #ccc;padding-top:6px"><div class="l m" style="background:#333;height:7px;width:30%"></div><div class="l"></div><div class="l m"></div><div class="l s"></div><div class="l"></div></div>
+          <div style="margin-top:8px;border-top:1px solid #ccc;padding-top:6px"><div class="l m" style="background:#333;height:7px;width:30%"></div><div class="l hl"></div><div class="l s"></div><div class="l m"></div></div>
+          <div style="margin-top:8px;border-top:1px solid #ccc;padding-top:6px"><div class="l m" style="background:#333;height:7px;width:30%"></div><div class="l"></div><div class="l m"></div></div>
+        </div>
+        <p class="xs faint" data-i18n="import.preview_hint">Yellow boxes mark where a low-confidence value was read from. Click a field on the right to jump to its source.</p>
+      </div>
+      <div class="card"><div class="card-body stack" style="gap:10px">
+        <div class="row between"><span class="strong small" data-i18n="import.file_info">File details</span></div>
+        <dl class="kv small">
+          <dt data-i18n="common.file">File</dt><dd class="mono">CV_Su_Su_Hlaing.pdf · 1.8 MB</dd>
+          <dt data-i18n="common.uploaded_by">Uploaded by</dt><dd>Aung Myat · 09:31</dd>
+          <dt data-i18n="import.keep_original">Original kept</dt><dd><span data-i18n="import.keep_original_d">Yes, attached under Documents</span></dd>
+        </dl>
+        <button class="btn btn-sm" data-i18n="import.reupload">Upload a different file</button>
+      </div></div>
+    </div>
+
+    <form class="stack" onsubmit="event.preventDefault(); location.href='candidate-detail.html'">
+      <section class="card">
+        <div class="card-header"><h3 data-i18n="form.s1">Basic information</h3><span class="badge badge-warning">2 <span data-i18n="import.to_check">to check</span></span></div>
+        <div class="card-body form-grid">
+          <div class="field"><label data-i18n="cand.code">Candidate code</label><div class="input-group"><span class="addon lead">SV-2024-</span><input class="input" value="0231"></div><span class="hint" data-i18n="import.code_auto">Assigned automatically</span></div>
+          <div class="field"><label><span data-i18n="form.name_native">Name (native script)</span> <span class="conf high" data-i18n="import.conf_high">high confidence</span></label><input class="input" value="စုစုလှိုင်"></div>
+          <div class="field"><label><span data-i18n="form.name_kana">Name (katakana)</span> <span class="conf low" data-i18n="import.conf_low">please check</span></label><input class="input hl" value="スー・スー・ライン"><span class="hint" data-i18n="import.kana_hint">Generated from the romanized name. Check the long vowels.</span></div>
+          <div class="field"><label><span data-i18n="form.name_romaji">Name (Latin / passport)</span> <span class="conf high" data-i18n="import.conf_high">high confidence</span></label><input class="input" value="SU SU HLAING"></div>
+          <div class="field"><label data-i18n="form.dob">Date of birth</label><input class="input" type="date" value="2005-04-12"></div>
+          <div class="field"><label data-i18n="form.gender">Gender</label><select class="select"><option data-i18n="gender.f">Female</option><option data-i18n="gender.m">Male</option></select></div>
+          <div class="field"><label data-i18n="cand.nationality">Nationality</label><select class="select"><option>🇲🇲 Myanmar</option><option>🇻🇳 Vietnam</option><option>🇧🇩 Bangladesh</option><option>🇮🇩 Indonesia</option></select></div>
+          <div class="field"><label><span data-i18n="form.marital">Marital status</span> <span class="conf low" data-i18n="import.conf_low">please check</span></label><select class="select hl"><option data-i18n="form.single">Single</option><option data-i18n="form.married">Married</option></select></div>
+        </div>
+      </section>
+      <section class="card">
+        <div class="card-header"><h3 data-i18n="form.s2">Contact & family</h3></div>
+        <div class="card-body form-grid">
+          <div class="field span-2"><label data-i18n="form.address">Current address</label><input class="input" value="No. 45, Bo Aung Kyaw Street, Kyauktada Township, Yangon"></div>
+          <div class="field"><label data-i18n="form.phone">Phone</label><input class="input" value="+95 9 420 118 233"></div>
+          <div class="field"><label data-i18n="auth.email">Email</label><input class="input" value="susu.hlaing@gmail.com"></div>
+          <div class="span-2"><span class="label" data-i18n="form.family">Family members</span>
+            <div class="table-wrap mt-8"><table class="table small"><thead><tr><th data-i18n="form.relation">Relation</th><th data-i18n="common.name">Name</th><th data-i18n="cand.age">Age</th><th data-i18n="form.occupation">Occupation</th><th></th></tr></thead><tbody>
+              <tr><td>父 / Father</td><td>U Kyaw Win</td><td class="nums">54</td><td>Farmer</td><td><button class="btn btn-ghost btn-icon btn-sm" type="button"><svg class="ic"><use href="#i-x"/></svg></button></td></tr>
+              <tr><td>母 / Mother</td><td>Daw Khin Mya</td><td class="nums">51</td><td>Shop owner</td><td><button class="btn btn-ghost btn-icon btn-sm" type="button"><svg class="ic"><use href="#i-x"/></svg></button></td></tr>
+            </tbody></table></div><button class="btn btn-sm btn-ghost mt-8" type="button"><svg class="ic"><use href="#i-plus"/></svg><span data-i18n="form.add_row">Add row</span></button></div>
+        </div>
+      </section>
+      <section class="card">
+        <div class="card-header"><h3 data-i18n="form.s3">Education & work history</h3><span class="badge badge-warning">1 <span data-i18n="import.to_check">to check</span></span></div>
+        <div class="card-body stack">
+          <div><span class="label" data-i18n="form.education">Education</span>
+            <div class="table-wrap mt-8"><table class="table small"><thead><tr><th data-i18n="form.from">From</th><th data-i18n="form.to">To</th><th data-i18n="form.school">School</th><th data-i18n="form.major">Major</th><th data-i18n="common.status">Status</th></tr></thead><tbody>
+              <tr><td class="nums">2017.06</td><td class="nums">2021.03</td><td>Basic Education High School No. 2 Kyauktada</td><td>—</td><td data-i18n="form.graduated">Graduated</td></tr>
+              <tr><td class="nums">2021.12</td><td class="nums nowrap"><span class="hl" style="padding:0 4px">2024.03</span></td><td>University of Nursing, Yangon</td><td>Nursing (diploma)</td><td data-i18n="form.graduated">Graduated</td></tr>
+            </tbody></table></div></div>
+          <div><span class="label" data-i18n="form.work">Work history</span>
+            <div class="table-wrap mt-8"><table class="table small"><thead><tr><th data-i18n="form.from">From</th><th data-i18n="form.to">To</th><th data-i18n="form.company">Company</th><th data-i18n="form.position">Position</th></tr></thead><tbody>
+              <tr><td class="nums">2024.04</td><td class="nums">2025.10</td><td>Shwe Gon Daing Private Hospital</td><td>Nurse aide</td></tr>
+              <tr><td class="nums">2025.11</td><td data-i18n="form.present">present</td><td>Sao Việt Training Center (Yangon branch)</td><td>日本語・介護研修</td></tr>
+            </tbody></table></div></div>
+        </div>
+      </section>
+      <section class="card">
+        <div class="card-header"><h3 data-i18n="form.s4">Skills, Japanese & health</h3><span class="badge badge-warning">1 <span data-i18n="import.to_check">to check</span></span></div>
+        <div class="card-body form-grid-3">
+          <div class="field"><label><span data-i18n="form.jlpt">JLPT level</span> <span class="conf low" data-i18n="import.conf_low">please check</span></label><select class="select hl"><option>N3</option><option>N4</option><option>N5</option><option>N2</option></select><span class="hint" data-i18n="import.jlpt_hint">The document says "N3 (result pending)".</span></div>
+          <div class="field"><label data-i18n="form.study_months">Japanese study (months)</label><input class="input" value="11"></div>
+          <div class="field"><label data-i18n="form.conversation">Conversation level</label><select class="select"><option data-i18n="form.conv_daily">Daily conversation</option><option data-i18n="form.conv_basic">Basic phrases</option><option data-i18n="form.conv_business">Business level</option></select></div>
+          <div class="field"><label data-i18n="form.height">Height (cm)</label><input class="input" value="158"></div>
+          <div class="field"><label data-i18n="form.weight">Weight (kg)</label><input class="input" value="50"></div>
+          <div class="field"><label data-i18n="form.blood">Blood type</label><select class="select"><option>A</option><option>B</option><option>O</option><option>AB</option><option data-i18n="common.unknown">Unknown</option></select></div>
+        </div>
+      </section>
+      <div class="card-footer between card" style="border-radius:var(--radius-lg)">
+        <button class="btn btn-ghost" type="button" data-i18n="import.save_draft">Save as draft</button>
+        <div class="row"><a class="btn" href="candidate-new.html" data-i18n="common.cancel">Cancel</a><button class="btn btn-primary" type="submit"><svg class="ic"><use href="#i-check"/></svg><span data-i18n="import.save">Save candidate</span></button></div>
+      </div>
+    </form>
+  </div>
+</main>
+</div>
+</div>
+<div class="scrim" data-nav-close></div>
+<div class="toasts" id="toasts"></div>
+<script src="../assets/i18n.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

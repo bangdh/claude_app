@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en" data-app="tenant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Company settings · Rireki</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+Myanmar:wght@400;600&family=Noto+Serif+JP:wght@500;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar" id="sidebar" aria-label="Main navigation">
+  <div class="brand"><div class="brand-mark">履</div><div><div class="brand-name">Rireki</div><div class="brand-sub">履歴書クラウド</div></div></div>
+  <div class="tenant"><span class="avatar">SV</span><div class="grow"><div class="tenant-name truncate">Sao Việt Manpower</div><div class="tenant-domain truncate">saoviet.rireki.app</div></div></div>
+  <nav class="nav">
+    <a href="dashboard.html"><svg class="ic"><use href="#i-home"/></svg><span data-i18n="nav.dashboard">Dashboard</span></a>
+    <a href="candidates.html"><svg class="ic"><use href="#i-users"/></svg><span data-i18n="nav.candidates">Candidates</span><span class="count">182</span></a>
+    <a href="shares.html"><svg class="ic"><use href="#i-link"/></svg><span data-i18n="nav.shares">Share links</span><span class="count">14</span></a>
+  </nav>
+  <div class="nav-group eyebrow" data-i18n="nav.manage">Manage</div>
+  <nav class="nav">
+    <a href="settings-members.html"><svg class="ic"><use href="#i-user-check"/></svg><span data-i18n="nav.members">Members</span></a>
+    <a href="settings-company.html" class="active"><svg class="ic"><use href="#i-settings"/></svg><span data-i18n="nav.settings">Settings</span></a>
+    <a href="settings-company.html#audit"><svg class="ic"><use href="#i-list"/></svg><span data-i18n="nav.audit">Audit log</span></a>
+  </nav>
+  <div class="sidebar-foot">
+    <div class="usage"><div class="row between"><span class="strong">Pro</span><span class="faint nums">182 / 500</span></div><div class="bar"><i style="width:36%"></i></div><span class="faint" data-i18n="nav.usage">candidates used</span></div>
+    <div class="me"><span class="avatar">NH</span><div><div class="name">Nguyễn Thị Hương</div><div class="role" data-i18n="role.admin">Admin</div></div></div>
+  </div>
+</aside>
+<div class="app-main">
+<header class="topbar">
+  <button class="btn btn-ghost btn-icon hamburger" data-nav-toggle aria-label="Menu"><svg class="ic"><use href="#i-menu"/></svg></button>
+  <div class="search input-wrap"><svg class="ic"><use href="#i-search"/></svg><input class="input input-sm" placeholder="Search code, name, katakana…" data-i18n-placeholder="nav.search"></div>
+  <div class="spacer"></div>
+  <div data-lang-switch></div>
+  <button class="btn btn-ghost btn-icon" data-theme-toggle aria-label="Toggle theme"><svg class="ic"><use href="#i-moon"/></svg></button>
+  <button class="btn btn-ghost btn-icon" aria-label="Notifications" style="position:relative"><svg class="ic"><use href="#i-bell"/></svg><span style="position:absolute;top:7px;right:8px;width:7px;height:7px;border-radius:50%;background:var(--vermilion)"></span></button>
+  <details class="menu">
+    <summary class="btn btn-ghost" style="padding:0 6px"><span class="avatar avatar-sm">NH</span><svg class="ic ic-sm"><use href="#i-chev-down"/></svg></summary>
+    <div class="menu-list">
+      <div class="menu-head">huong.nguyen@saoviet.vn</div>
+      <a href="#"><svg class="ic"><use href="#i-user"/></svg><span data-i18n="nav.profile">My profile</span></a>
+      <a href="settings-company.html"><svg class="ic"><use href="#i-settings"/></svg><span data-i18n="nav.settings">Settings</span></a>
+      <hr>
+      <a href="login.html"><svg class="ic"><use href="#i-logout"/></svg><span data-i18n="nav.logout">Sign out</span></a>
+    </div>
+  </details>
+</header>
+<main class="main" id="main">
+  <div class="page-header">
+    <div><h1 data-i18n="nav.settings">Settings</h1><p class="sub" data-i18n="settings.sub">Workspace of Sao Việt Manpower · saoviet.rireki.app</p></div>
+  </div>
+  <div class="grid grid-aside-main" style="grid-template-columns:220px minmax(0,1fr)">
+    <nav class="subnav" data-tabs data-tabs-hash>
+      <a href="#company" class="tab active" data-tab="company"><svg class="ic"><use href="#i-building"/></svg><span data-i18n="settings.company">Company</span></a>
+      <a href="settings-members.html"><svg class="ic"><use href="#i-users"/></svg><span data-i18n="nav.members">Members & roles</span></a>
+      <a href="#branding" class="tab" data-tab="branding"><svg class="ic"><use href="#i-image"/></svg><span data-i18n="settings.branding">Branding</span></a>
+      <a href="#security" class="tab" data-tab="security"><svg class="ic"><use href="#i-shield"/></svg><span data-i18n="settings.security">Security & defaults</span></a>
+      <a href="#billing" class="tab" data-tab="billing"><svg class="ic"><use href="#i-card"/></svg><span data-i18n="settings.billing">Plan & billing</span></a>
+      <a href="#audit" class="tab" data-tab="audit"><svg class="ic"><use href="#i-list"/></svg><span data-i18n="nav.audit">Audit log</span></a>
+    </nav>
+    <div>
+      <!-- COMPANY -->
+      <div data-tab-panel="company" class="stack-lg">
+        <section class="card">
+          <div class="card-header"><h2 data-i18n="settings.company_profile">Company profile</h2></div>
+          <div class="card-body" style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px">
+            <div class="stack" style="gap:8px;align-items:center"><span class="avatar avatar-lg" style="width:88px;height:88px;font-size:26px;border-radius:16px;background:var(--primary-soft);color:var(--primary-ink)">SV</span><button class="btn btn-sm" type="button" data-i18n="settings.change_logo">Change logo</button></div>
+            <div class="form-grid">
+              <div class="field"><label class="label" data-i18n="settings.name_local">Company name (local)</label><input class="input" value="Công ty CP Nhân lực Sao Việt"></div>
+              <div class="field"><label class="label" data-i18n="settings.name_ja">Company name (Japanese)</label><input class="input" value="サオベト人材株式会社"></div>
+              <div class="field"><label class="label" data-i18n="settings.name_en">Company name (English)</label><input class="input" value="Sao Việt Manpower JSC"></div>
+              <div class="field"><label class="label" data-i18n="signup.country">Country</label><select class="select"><option>🇻🇳 Vietnam</option><option>🇲🇲 Myanmar</option><option>🇧🇩 Bangladesh</option><option>🇮🇩 Indonesia</option></select></div>
+              <div class="field"><label class="label" data-i18n="settings.license">Sending license no.</label><input class="input" value="1234/LĐTBXH-GP"></div>
+              <div class="field"><label class="label" data-i18n="form.phone">Phone</label><input class="input" value="+84 24 3856 7890"></div>
+              <div class="field span-2"><label class="label" data-i18n="form.address">Address</label><input class="input" value="Tầng 5, 25 Lê Đại Hành, Hai Bà Trưng, Hà Nội"></div>
+              <div class="field"><label class="label" data-i18n="settings.default_lang">Default language for new members</label><select class="select"><option>Tiếng Việt</option><option>English</option><option>日本語</option><option>မြန်မာ</option><option>Bahasa Indonesia</option></select></div>
+              <div class="field"><label class="label" data-i18n="settings.timezone">Time zone</label><select class="select"><option>Asia/Ho_Chi_Minh (UTC+7)</option><option>Asia/Yangon (UTC+6:30)</option><option>Asia/Dhaka (UTC+6)</option><option>Asia/Jakarta (UTC+7)</option><option>Asia/Tokyo (UTC+9)</option></select></div>
+            </div>
+          </div>
+          <div class="card-footer"><button class="btn btn-primary" data-i18n="common.save">Save changes</button></div>
+        </section>
+        <section class="card">
+          <div class="card-header"><h2 data-i18n="settings.subdomain_t">Subdomain</h2></div>
+          <div class="card-body stack">
+            <div class="field" style="max-width:420px"><label class="label" data-i18n="signup.subdomain">Workspace address</label><div class="input-group"><input class="input mono" value="saoviet"><span class="addon">.rireki.app</span></div></div>
+            <div class="callout callout-warning"><svg class="ic"><use href="#i-alert"/></svg><div data-i18n="settings.subdomain_warn">Changing the subdomain changes every share link you have already sent. Old links keep working for 30 days and then stop.</div></div>
+          </div>
+        </section>
+        <section class="card">
+          <div class="card-header"><h2 data-i18n="settings.code_t">Candidate code format</h2></div>
+          <div class="card-body form-grid-3">
+            <div class="field"><label class="label" data-i18n="settings.code_prefix">Prefix</label><input class="input mono" value="SV"></div>
+            <div class="field"><label class="label" data-i18n="settings.code_year">Include year</label><select class="select"><option data-i18n="common.yes">Yes</option><option data-i18n="common.no">No</option></select></div>
+            <div class="field"><label class="label" data-i18n="settings.code_digits">Sequence digits</label><select class="select"><option>4</option><option>5</option><option>6</option></select></div>
+            <div class="span-3 small muted"><span data-i18n="settings.code_preview">Next code will be</span> <code>SV-2024-0231</code></div>
+          </div>
+        </section>
+      </div>
+
+      <!-- BRANDING -->
+      <div data-tab-panel="branding" class="stack-lg" hidden>
+        <section class="card">
+          <div class="card-header"><h2 data-i18n="settings.branding">Branding</h2><span class="small muted" data-i18n="settings.branding_d">Shown on the pages your clients open</span></div>
+          <div class="card-body grid grid-2">
+            <div class="stack">
+              <div class="field"><label class="label" data-i18n="settings.brand_logo">Logo for share pages</label><div class="row"><span class="avatar" style="width:56px;height:56px;border-radius:12px;background:var(--primary-soft);color:var(--primary-ink);font-size:18px">SV</span><button class="btn btn-sm" data-i18n="common.upload">Upload</button></div></div>
+              <div class="field"><label class="label" data-i18n="settings.brand_color">Brand color</label><div class="row"><input type="color" value="#2455A4" style="width:44px;height:38px;border:1px solid var(--border-strong);border-radius:8px;background:var(--surface)"><input class="input mono" value="#2455A4" style="width:120px"></div></div>
+              <div class="field"><label class="label" data-i18n="settings.brand_name_display">Display name</label><input class="input" value="Sao Việt Manpower"></div>
+              <div class="field"><label class="label" data-i18n="settings.brand_footer">Footer line on share pages</label><input class="input" value="Sao Việt Manpower JSC · Hà Nội · +84 24 3856 7890 · sales@saoviet.vn"></div>
+              <label class="switch"><input type="checkbox" checked><span class="track"></span><span data-i18n="settings.powered">Show "Powered by Rireki"</span></label>
+            </div>
+            <div class="field"><span class="label" data-i18n="common.preview">Preview</span><div class="card" style="overflow:hidden"><div class="viewer-header" style="position:static"><div class="container" style="padding-inline:14px"><div class="viewer-brand"><span class="logo">SV</span><div><div class="n">Sao Việt Manpower</div><div class="s">ヤマト建設様 溶接候補者</div></div></div></div></div><div class="card-body small muted" style="padding:14px"><div class="cand-card" style="pointer-events:none"><span class="avatar-photo">NA</span><div><div class="n">グエン・バン・アン</div><div class="k">Nguyễn Văn An · SV-2024-0182</div></div></div></div><div class="xs faint" style="padding:8px 14px;border-top:1px solid var(--border)">Sao Việt Manpower JSC · Hà Nội · Powered by Rireki</div></div></div>
+          </div>
+          <div class="card-footer"><button class="btn btn-primary" data-i18n="common.save">Save changes</button></div>
+        </section>
+      </div>
+
+      <!-- SECURITY -->
+      <div data-tab-panel="security" class="stack-lg" hidden>
+        <section class="card">
+          <div class="card-header"><h2 data-i18n="settings.signin_security">Sign-in security</h2></div>
+          <div class="card-body stack">
+            <label class="switch"><input type="checkbox" checked><span class="track"></span><span><span data-i18n="settings.2fa_admins">Require two-factor authentication for admins</span></span></label>
+            <label class="switch"><input type="checkbox"><span class="track"></span><span data-i18n="settings.2fa_all">Require two-factor authentication for all members</span></label>
+            <div class="form-grid" style="max-width:640px">
+              <div class="field"><label class="label" data-i18n="settings.pw_min">Minimum password length</label><select class="select"><option>10</option><option>12</option><option>14</option></select></div>
+              <div class="field"><label class="label" data-i18n="settings.session">Sign out after inactivity</label><select class="select"><option>8 hours</option><option>1 hour</option><option>24 hours</option></select></div>
+              <div class="field span-2"><label class="label" data-i18n="settings.ip_allow">Allowed IP ranges for the admin area (optional)</label><input class="input mono" placeholder="203.0.113.0/24, 198.51.100.7"></div>
+            </div>
+          </div>
+        </section>
+        <section class="card">
+          <div class="card-header"><h2 data-i18n="settings.link_defaults">Share-link defaults</h2><span class="small muted" data-i18n="settings.link_defaults_d">Applied to every new link. Members can change them per link unless locked.</span></div>
+          <div class="card-body stack">
+            <div class="row between"><label class="switch"><input type="checkbox" checked><span class="track"></span><span data-i18n="settings.def_pw">Password required by default</span></label><label class="check small"><input type="checkbox"><span data-i18n="settings.lock">Lock (users cannot turn off)</span></label></div>
+            <div class="row between"><label class="switch"><input type="checkbox" checked><span class="track"></span><span data-i18n="settings.def_viewonly">View only by default</span></label><label class="check small"><input type="checkbox" checked><span data-i18n="settings.lock">Lock (users cannot turn off)</span></label></div>
+            <div class="row between"><label class="switch"><input type="checkbox" checked><span class="track"></span><span data-i18n="settings.def_identity">Ask viewers for name and email</span></label><label class="check small"><input type="checkbox"><span data-i18n="settings.lock">Lock (users cannot turn off)</span></label></div>
+            <div class="row between"><label class="switch"><input type="checkbox"><span class="track"></span><span data-i18n="settings.def_contact">Show candidate contact info to clients</span></label><span></span></div>
+            <div class="form-grid" style="max-width:640px">
+              <div class="field"><label class="label" data-i18n="settings.def_expiry">Default expiry</label><select class="select"><option>14 days</option><option>7 days</option><option>30 days</option><option data-i18n="sharenew.no_expiry">No expiry</option></select></div>
+              <div class="field"><label class="label" data-i18n="settings.capture_level">View-only protection level</label><select class="select"><option data-i18n="settings.capture_strict">Strict — watermark, blur on focus loss, block print/shortcuts</option><option data-i18n="settings.capture_standard">Standard — watermark and no downloads</option></select></div>
+            </div>
+          </div>
+          <div class="card-footer"><button class="btn btn-primary" data-i18n="common.save">Save changes</button></div>
+        </section>
+      </div>
+
+      <!-- BILLING -->
+      <div data-tab-panel="billing" class="stack-lg" hidden>
+        <section class="card">
+          <div class="card-header"><div><h2><span data-i18n="settings.plan">Plan</span>: Pro</h2><p class="small muted">US$ 79 / <span data-i18n="settings.month">month</span> · <span data-i18n="settings.renews">renews</span> 1 Nov 2026 · VISA •••• 4242</p></div><div class="row"><button class="btn" data-i18n="settings.change_plan">Change plan</button><button class="btn btn-primary" data-i18n="settings.upgrade">Upgrade to Business</button></div></div>
+          <div class="card-body grid grid-4">
+            <div><div class="row between small"><span data-i18n="cand.title">Candidates</span><span class="nums">182 / 500</span></div><div class="progress mt-8"><i style="width:36%"></i></div></div>
+            <div><div class="row between small"><span data-i18n="settings.video_storage">Video storage</span><span class="nums">12.4 / 50 GB</span></div><div class="progress mt-8"><i style="width:25%"></i></div></div>
+            <div><div class="row between small"><span data-i18n="nav.members">Members</span><span class="nums">8 / 15</span></div><div class="progress mt-8"><i style="width:53%"></i></div></div>
+            <div><div class="row between small"><span data-i18n="shares.title">Share links</span><span class="nums">14 / ∞</span></div><div class="progress mt-8"><i style="width:8%"></i></div></div>
+          </div>
+        </section>
+        <section class="card">
+          <div class="card-header"><h3 data-i18n="settings.invoices">Invoices</h3></div>
+          <div class="table-wrap"><table class="table"><thead><tr><th data-i18n="common.date">Date</th><th data-i18n="settings.invoice_no">Invoice</th><th class="num" data-i18n="settings.amount">Amount</th><th data-i18n="common.status">Status</th><th></th></tr></thead><tbody>
+            <tr><td>1 Sep 2026</td><td class="mono">INV-2026-09-0412</td><td class="num">US$ 79.00</td><td><span class="badge badge-success" data-i18n="settings.paid">Paid</span></td><td class="right"><button class="btn btn-sm btn-ghost">PDF</button></td></tr>
+            <tr><td>1 Aug 2026</td><td class="mono">INV-2026-08-0398</td><td class="num">US$ 79.00</td><td><span class="badge badge-success" data-i18n="settings.paid">Paid</span></td><td class="right"><button class="btn btn-sm btn-ghost">PDF</button></td></tr>
+            <tr><td>1 Jul 2026</td><td class="mono">INV-2026-07-0371</td><td class="num">US$ 79.00</td><td><span class="badge badge-success" data-i18n="settings.paid">Paid</span></td><td class="right"><button class="btn btn-sm btn-ghost">PDF</button></td></tr>
+          </tbody></table></div>
+        </section>
+      </div>
+
+      <!-- AUDIT -->
+      <div data-tab-panel="audit" class="stack-lg" hidden>
+        <section class="card">
+          <div class="card-header"><div><h2 data-i18n="nav.audit">Audit log</h2><p class="small muted" data-i18n="settings.audit_d">Every sign-in, setting change, export, link creation and revocation. Kept for 24 months.</p></div><div class="row"><input class="input input-sm" type="date" value="2026-09-30"><button class="btn btn-sm"><svg class="ic"><use href="#i-download"/></svg>CSV</button></div></div>
+          <div class="table-wrap"><table class="table"><thead><tr><th data-i18n="common.time">Time</th><th data-i18n="settings.actor">Member</th><th data-i18n="track.action">Action</th><th data-i18n="settings.target">Target</th><th>IP</th></tr></thead><tbody>
+            <tr><td class="nowrap nums">10:05 <span class="faint" data-i18n="common.today">today</span></td><td>Phạm Thu Trang</td><td><span class="badge badge-info">link.create</span></td><td>さくら介護 9月候補 (3 candidates, password, view-only)</td><td class="mono">113.190.x.x</td></tr>
+            <tr><td class="nowrap nums">09:31 <span class="faint" data-i18n="common.today">today</span></td><td>Aung Myat</td><td><span class="badge badge-info">video.upload</span></td><td>SV-2024-0219 · 自己紹介.mp4</td><td class="mono">103.90.x.x</td></tr>
+            <tr><td class="nowrap nums">08:58 <span class="faint" data-i18n="common.today">today</span></td><td>Nguyễn Thị Hương</td><td><span class="badge">auth.login</span></td><td>2FA ok · Chrome · Windows</td><td class="mono">113.190.x.x</td></tr>
+            <tr><td class="nowrap nums">17:50 <span class="faint" data-i18n="common.yesterday">yesterday</span></td><td>Lê Văn Tùng</td><td><span class="badge badge-info">candidate.import</span></td><td>3 files → SV-2024-0215, 2 pending review</td><td class="mono">113.190.x.x</td></tr>
+            <tr><td class="nowrap nums">15:12 <span class="faint" data-i18n="common.yesterday">yesterday</span></td><td>Nguyễn Thị Hương</td><td><span class="badge badge-warning">member.invite</span></td><td>minh.tran@saoviet.vn (User)</td><td class="mono">113.190.x.x</td></tr>
+            <tr><td class="nowrap nums">11:20 · 28 Sep</td><td>Nguyễn Thị Hương</td><td><span class="badge badge-warning">settings.security</span></td><td>View-only default: locked</td><td class="mono">113.190.x.x</td></tr>
+            <tr><td class="nowrap nums">16:44 · 26 Sep</td><td>Phạm Thu Trang</td><td><span class="badge badge-info">link.create</span></td><td>ヤマト建設様 溶接候補者 (5 candidates)</td><td class="mono">113.190.x.x</td></tr>
+            <tr><td class="nowrap nums">09:02 · 1 Sep</td><td>Nguyễn Thị Hương</td><td><span class="badge badge-danger">link.revoke</span></td><td>テスト送付</td><td class="mono">113.190.x.x</td></tr>
+          </tbody></table></div>
+        </section>
+      </div>
+    </div>
+  </div>
+</main>
+</div>
+</div>
+<div class="scrim" data-nav-close></div>
+<div class="toasts" id="toasts"></div>
+<script src="../assets/i18n.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

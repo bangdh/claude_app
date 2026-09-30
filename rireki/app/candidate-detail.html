@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en" data-app="tenant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nguyễn Văn An · SV-2024-0182 · Rireki</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+Myanmar:wght@400;600&family=Noto+Serif+JP:wght@500;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar" id="sidebar" aria-label="Main navigation">
+  <div class="brand"><div class="brand-mark">履</div><div><div class="brand-name">Rireki</div><div class="brand-sub">履歴書クラウド</div></div></div>
+  <div class="tenant"><span class="avatar">SV</span><div class="grow"><div class="tenant-name truncate">Sao Việt Manpower</div><div class="tenant-domain truncate">saoviet.rireki.app</div></div></div>
+  <nav class="nav">
+    <a href="dashboard.html"><svg class="ic"><use href="#i-home"/></svg><span data-i18n="nav.dashboard">Dashboard</span></a>
+    <a href="candidates.html" class="active"><svg class="ic"><use href="#i-users"/></svg><span data-i18n="nav.candidates">Candidates</span><span class="count">182</span></a>
+    <a href="shares.html"><svg class="ic"><use href="#i-link"/></svg><span data-i18n="nav.shares">Share links</span><span class="count">14</span></a>
+  </nav>
+  <div class="nav-group eyebrow" data-i18n="nav.manage">Manage</div>
+  <nav class="nav">
+    <a href="settings-members.html"><svg class="ic"><use href="#i-user-check"/></svg><span data-i18n="nav.members">Members</span></a>
+    <a href="settings-company.html"><svg class="ic"><use href="#i-settings"/></svg><span data-i18n="nav.settings">Settings</span></a>
+    <a href="settings-company.html#audit"><svg class="ic"><use href="#i-list"/></svg><span data-i18n="nav.audit">Audit log</span></a>
+  </nav>
+  <div class="sidebar-foot">
+    <div class="usage"><div class="row between"><span class="strong">Pro</span><span class="faint nums">182 / 500</span></div><div class="bar"><i style="width:36%"></i></div><span class="faint" data-i18n="nav.usage">candidates used</span></div>
+    <div class="me"><span class="avatar">NH</span><div><div class="name">Nguyễn Thị Hương</div><div class="role" data-i18n="role.admin">Admin</div></div></div>
+  </div>
+</aside>
+<div class="app-main">
+<header class="topbar">
+  <button class="btn btn-ghost btn-icon hamburger" data-nav-toggle aria-label="Menu"><svg class="ic"><use href="#i-menu"/></svg></button>
+  <div class="search input-wrap"><svg class="ic"><use href="#i-search"/></svg><input class="input input-sm" placeholder="Search code, name, katakana…" data-i18n-placeholder="nav.search"></div>
+  <div class="spacer"></div>
+  <div data-lang-switch></div>
+  <button class="btn btn-ghost btn-icon" data-theme-toggle aria-label="Toggle theme"><svg class="ic"><use href="#i-moon"/></svg></button>
+  <button class="btn btn-ghost btn-icon" aria-label="Notifications" style="position:relative"><svg class="ic"><use href="#i-bell"/></svg><span style="position:absolute;top:7px;right:8px;width:7px;height:7px;border-radius:50%;background:var(--vermilion)"></span></button>
+  <details class="menu">
+    <summary class="btn btn-ghost" style="padding:0 6px"><span class="avatar avatar-sm">NH</span><svg class="ic ic-sm"><use href="#i-chev-down"/></svg></summary>
+    <div class="menu-list">
+      <div class="menu-head">huong.nguyen@saoviet.vn</div>
+      <a href="#"><svg class="ic"><use href="#i-user"/></svg><span data-i18n="nav.profile">My profile</span></a>
+      <a href="settings-company.html"><svg class="ic"><use href="#i-settings"/></svg><span data-i18n="nav.settings">Settings</span></a>
+      <hr>
+      <a href="login.html"><svg class="ic"><use href="#i-logout"/></svg><span data-i18n="nav.logout">Sign out</span></a>
+    </div>
+  </details>
+</header>
+<main class="main" id="main">
+  <div class="crumbs"><a href="candidates.html" data-i18n="cand.title">Candidates</a><span>/</span><span class="mono">SV-2024-0182</span></div>
+  <div class="page-header" style="align-items:center">
+    <div class="row-nowrap" style="gap:16px;align-items:flex-start">
+      <span class="avatar-photo lg">NA</span>
+      <div class="col" style="gap:6px">
+        <div><h1 style="display:inline">Nguyễn Văn An</h1> <span class="kana" style="font-size:13px">グエン・バン・アン</span></div>
+        <div class="row" style="gap:6px"><span class="badge badge-outline mono">SV-2024-0182</span><span class="badge"><span class="flag">🇻🇳</span> Vietnam</span><span class="badge"><span data-i18n="gender.m">Male</span> · 24</span><span class="badge badge-primary">JLPT N4</span><span class="badge">溶接 · 機械加工</span><span class="badge badge-success badge-dot" data-i18n="status.proposed">Proposed</span></div>
+        <p class="small muted"><span data-i18n="detail.added">Added</span> 12 May 2026 <span data-i18n="common.by">by</span> Lê Văn Tùng · <span data-i18n="common.updated">Updated</span> 28 Sep 2026 <span data-i18n="common.by">by</span> Phạm Thu Trang</p>
+      </div>
+    </div>
+    <div class="actions">
+      <a class="btn" href="candidate-form.html"><svg class="ic"><use href="#i-edit"/></svg><span data-i18n="common.edit">Edit</span></a>
+      <a class="btn btn-primary" href="share-new.html"><svg class="ic"><use href="#i-link"/></svg><span data-i18n="detail.share_single">Create share link</span></a>
+      <details class="menu"><summary class="btn btn-icon" aria-label="More"><svg class="ic"><use href="#i-more"/></svg></summary><div class="menu-list"><a href="#"><svg class="ic"><use href="#i-download"/></svg><span data-i18n="cand.export_pdf">Export 履歴書 PDF</span></a><a href="#"><svg class="ic"><use href="#i-printer"/></svg><span data-i18n="common.print">Print</span></a><a href="#"><svg class="ic"><use href="#i-copy"/></svg><span data-i18n="common.duplicate">Duplicate</span></a><a href="#"><svg class="ic"><use href="#i-refresh"/></svg><span data-i18n="detail.change_status">Change status</span></a><hr><a href="#" class="danger"><svg class="ic"><use href="#i-archive"/></svg><span data-i18n="common.archive">Archive</span></a></div></details>
+    </div>
+  </div>
+
+  <div class="callout mb-16"><svg class="ic"><use href="#i-eye"/></svg><div><span data-i18n="detail.in_links">Included in</span> <b>2 <span data-i18n="detail.active_links">active share links</span></b> · <b>31</b> <span data-i18n="common.views">views</span> <span data-i18n="common.by">by</span> 6 <span data-i18n="common.unique_viewers">unique viewers</span> · <span data-i18n="detail.last_viewed">last viewed</span> 09:42 <span data-i18n="common.today">today</span> (田中 健一, ヤマト建設). <a href="#" data-tab-link="links" data-i18n="detail.see_links">See links</a></div></div>
+
+  <div class="tabs" data-tabs>
+    <button class="tab active" data-tab="cv"><svg class="ic"><use href="#i-file"/></svg><span data-i18n="detail.tab_cv">履歴書 (CV)</span></button>
+    <button class="tab" data-tab="videos"><svg class="ic"><use href="#i-video"/></svg><span data-i18n="detail.tab_videos">Videos</span><span class="count">3</span></button>
+    <button class="tab" data-tab="docs"><svg class="ic"><use href="#i-layers"/></svg><span data-i18n="detail.tab_docs">Documents</span><span class="count">4</span></button>
+    <button class="tab" data-tab="links"><svg class="ic"><use href="#i-link"/></svg><span data-i18n="detail.tab_links">Share links</span><span class="count">2</span></button>
+    <button class="tab" data-tab="activity"><svg class="ic"><use href="#i-activity"/></svg><span data-i18n="detail.tab_activity">Activity</span></button>
+    <button class="tab" data-tab="notes"><svg class="ic"><use href="#i-edit"/></svg><span data-i18n="detail.tab_notes">Internal notes</span><span class="count">1</span></button>
+  </div>
+
+  <!-- CV -->
+  <div class="tab-panel" data-tab-panel="cv">
+    <div class="row between mb-16">
+      <div class="row"><span class="small muted" data-i18n="detail.cv_lang">Document language</span><div class="segmented"><button class="active">日本語</button><button>Tiếng Việt</button><button>English</button></div></div>
+      <div class="row"><span class="badge badge-success"><svg class="ic"><use href="#i-check"/></svg><span data-i18n="detail.cv_complete">Complete · 96%</span></span><button class="btn btn-sm"><svg class="ic"><use href="#i-download"/></svg>PDF</button><a class="btn btn-sm" href="candidate-form.html"><svg class="ic"><use href="#i-edit"/></svg><span data-i18n="common.edit">Edit</span></a></div>
+    </div>
+    <article class="rirekisho" lang="ja">
+      <span class="seal stamp">確認</span>
+      <div class="doc-title"><h2>履歴書</h2><span class="date">2026年9月28日現在</span></div>
+      <div class="name-block">
+        <div class="cell"><div class="kana">ふりがな　グエン・バン・アン</div><div class="name">Nguyễn Văn An</div><div class="kana">NGUYEN VAN AN　／　人材コード SV-2024-0182</div></div>
+        <div class="cell photo"><span class="avatar-photo" style="width:80px;height:104px">写真</span></div>
+      </div>
+      <table>
+        <tr><th>生年月日</th><td>2002年3月15日（満24歳）</td><th>性別</th><td>男</td></tr>
+        <tr><th>国籍</th><td>ベトナム</td><th>婚姻</th><td>未婚</td></tr>
+        <tr><th>宗教</th><td>無</td><th>出身地</th><td>タインホア省</td></tr>
+        <tr><th>現住所</th><td colspan="3">タインホア省ホアンホア県ホアンティエン村</td></tr>
+        <tr><th>電話</th><td>+84 912 345 678</td><th>Email</th><td>an.nguyen@example.com</td></tr>
+      </table>
+      <div class="sec">学歴</div>
+      <table class="list"><tr><th>年</th><th>月</th><th style="width:auto;text-align:left">学校名・学部・学科</th><th>状況</th></tr>
+        <tr><td class="c">2017</td><td class="c">9</td><td>ホアンホア第2高等学校</td><td class="c">入学</td></tr>
+        <tr><td class="c">2020</td><td class="c">6</td><td>ホアンホア第2高等学校</td><td class="c">卒業</td></tr>
+        <tr><td class="c">2020</td><td class="c">9</td><td>タインホア職業短期大学　溶接科</td><td class="c">入学</td></tr>
+        <tr><td class="c">2022</td><td class="c">6</td><td>タインホア職業短期大学　溶接科</td><td class="c">卒業</td></tr>
+      </table>
+      <div class="sec">職歴</div>
+      <table class="list"><tr><th>年</th><th>月</th><th style="width:auto;text-align:left">会社名・職種・業務内容</th><th>状況</th></tr>
+        <tr><td class="c">2022</td><td class="c">8</td><td>ミンファット機械有限会社　溶接工（鉄骨フレームのMIG/TIG溶接）</td><td class="c">入社</td></tr>
+        <tr><td class="c">2024</td><td class="c">5</td><td>ミンファット機械有限会社</td><td class="c">退社</td></tr>
+        <tr><td class="c">2024</td><td class="c">6</td><td>サオベト研修センター　日本語研修</td><td class="c">現在</td></tr>
+      </table>
+      <div class="sec">資格・免許</div>
+      <table class="list"><tr><th>年</th><th>月</th><th style="width:auto;text-align:left">資格・免許名</th><th>発行</th></tr>
+        <tr><td class="c">2023</td><td class="c">4</td><td>溶接技能証明書 3G</td><td class="c">職業短期大学</td></tr>
+        <tr><td class="c">2025</td><td class="c">12</td><td>日本語能力試験 N4 合格</td><td class="c">JF</td></tr>
+      </table>
+      <div class="sec">日本語能力・健康状態</div>
+      <table>
+        <tr><th>日本語能力</th><td>JLPT N4　／　学習期間 10ヶ月　／　日常会話可能</td><th>その他言語</th><td>英語（初級）</td></tr>
+        <tr><th>身長・体重</th><td>168 cm　／　61 kg</td><th>視力</th><td>左 1.0　右 1.0</td></tr>
+        <tr><th>血液型</th><td>O型</td><th>利き手</th><td>右</td></tr>
+        <tr><th>入れ墨</th><td>無</td><th>アレルギー・既往歴</th><td>無</td></tr>
+      </table>
+      <div class="sec">家族構成</div>
+      <table class="list"><tr><th>続柄</th><th style="width:auto;text-align:left">氏名</th><th>年齢</th><th>職業</th><th>同居</th></tr>
+        <tr><td class="c">父</td><td>Nguyễn Văn Bình</td><td class="c">52</td><td class="c">農業</td><td class="c">同居</td></tr>
+        <tr><td class="c">母</td><td>Lê Thị Hoa</td><td class="c">50</td><td class="c">農業</td><td class="c">同居</td></tr>
+        <tr><td class="c">妹</td><td>Nguyễn Thị Lan</td><td class="c">19</td><td class="c">学生</td><td class="c">同居</td></tr>
+      </table>
+      <div class="sec">希望</div>
+      <table><tr><th>希望職種</th><td>溶接・機械加工</td><th>希望地域</th><td>愛知・大阪</td></tr><tr><th>渡航可能時期</th><td>2027年1月</td><th>制度</th><td>技能実習</td></tr></table>
+      <div class="sec">志望動機</div>
+      <div class="para">日本の溶接技術を学び、将来はベトナムで技術者として働きたいと考えています。専門学校で溶接を学び、2年間の実務経験があります。日本の厳しい品質基準の中で技術を磨き、家族を支えたいです。</div>
+      <div class="sec">自己PR・趣味・特技</div>
+      <div class="para">真面目で体力に自信があります。前職では月間の不良率を3%から1%に改善しました。チームで協力して働くことが好きです。趣味はサッカーと料理です。</div>
+    </article>
+  </div>
+
+  <!-- VIDEOS -->
+  <div class="tab-panel" data-tab-panel="videos" hidden>
+    <div class="row between mb-16"><p class="muted" data-i18n="detail.videos_hint">The first video is shown as the main video on share pages. Drag to reorder.</p><button class="btn btn-primary"><svg class="ic"><use href="#i-upload"/></svg><span data-i18n="detail.upload_video">Upload video</span></button></div>
+    <div class="grid grid-3">
+      <div class="video-card"><div class="video-thumb"><span class="lbl badge badge-primary" data-i18n="detail.main_video">Main</span><span class="play"><svg class="ic"><use href="#i-play"/></svg></span><span class="dur">1:32</span></div><div class="video-meta"><b>自己紹介（日本語）</b><span class="small muted">日本語 · 84 MB · 12 May 2026</span><div class="row between mt-8"><span class="small muted">18 <span data-i18n="detail.plays">plays</span> · <span data-i18n="detail.avg_watch">avg 78% watched</span></span><details class="menu"><summary class="btn btn-ghost btn-icon btn-sm"><svg class="ic"><use href="#i-more"/></svg></summary><div class="menu-list"><button><svg class="ic"><use href="#i-edit"/></svg><span data-i18n="common.rename">Rename</span></button><button><svg class="ic"><use href="#i-refresh"/></svg><span data-i18n="detail.replace">Replace file</span></button><hr><button class="danger"><svg class="ic"><use href="#i-trash"/></svg><span data-i18n="common.delete">Delete</span></button></div></details></div></div></div>
+      <div class="video-card"><div class="video-thumb"><span class="play"><svg class="ic"><use href="#i-play"/></svg></span><span class="dur">2:45</span></div><div class="video-meta"><b>溶接実技デモ</b><span class="small muted">— · 210 MB · 14 May 2026</span><div class="row between mt-8"><span class="small muted">11 <span data-i18n="detail.plays">plays</span> · <span data-i18n="detail.avg_watch">avg 64% watched</span></span><button class="btn btn-ghost btn-icon btn-sm"><svg class="ic"><use href="#i-more"/></svg></button></div></div></div>
+      <div class="video-card"><div class="video-thumb"><span class="play"><svg class="ic"><use href="#i-play"/></svg></span><span class="dur">3:10</span></div><div class="video-meta"><b>面接練習 Q&amp;A</b><span class="small muted">日本語 · 156 MB · 20 Sep 2026</span><div class="row between mt-8"><span class="small muted">2 <span data-i18n="detail.plays">plays</span></span><button class="btn btn-ghost btn-icon btn-sm"><svg class="ic"><use href="#i-more"/></svg></button></div></div></div>
+    </div>
+  </div>
+
+  <!-- DOCUMENTS -->
+  <div class="tab-panel" data-tab-panel="docs" hidden>
+    <div class="callout callout-warning mb-16"><svg class="ic"><use href="#i-lock"/></svg><div data-i18n="detail.docs_hint">Documents stay internal. They appear on a share page only when the link's "Documents" section is switched on, and download follows the link's download setting.</div></div>
+    <div class="stack" style="gap:8px;max-width:760px">
+      <div class="doc-row"><svg class="ic"><use href="#i-file"/></svg><div class="grow"><div class="n">CV_NguyenVanAn_original.docx</div><div class="m"><span data-i18n="detail.doc_original">Original uploaded CV</span> · 412 KB · 12 May 2026 · Lê Văn Tùng</div></div><span class="badge" data-i18n="detail.doc_internal">Internal</span><button class="btn btn-ghost btn-icon btn-sm"><svg class="ic"><use href="#i-download"/></svg></button><button class="btn btn-ghost btn-icon btn-sm"><svg class="ic"><use href="#i-more"/></svg></button></div>
+      <div class="doc-row"><svg class="ic"><use href="#i-file"/></svg><div class="grow"><div class="n">passport_scan.pdf</div><div class="m"><span data-i18n="form.doc_passport">Passport</span> · 1.1 MB · <span data-i18n="form.passport_exp">Passport expiry</span> 2031-02-10</div></div><span class="badge" data-i18n="detail.doc_internal">Internal</span><button class="btn btn-ghost btn-icon btn-sm"><svg class="ic"><use href="#i-download"/></svg></button><button class="btn btn-ghost btn-icon btn-sm"><svg class="ic"><use href="#i-more"/></svg></button></div>
+      <div class="doc-row"><svg class="ic"><use href="#i-image"/></svg><div class="grow"><div class="n">JLPT_N4_certificate.jpg</div><div class="m"><span data-i18n="form.doc_cert">Certificate</span> · 640 KB</div></div><span class="badge badge-success" data-i18n="detail.doc_shareable">Shareable</span><button class="btn btn-ghost btn-icon btn-sm"><svg class="ic"><use href="#i-download"/></svg></button><button class="btn btn-ghost btn-icon btn-sm"><svg class="ic"><use href="#i-more"/></svg></button></div>
+      <div class="doc-row"><svg class="ic"><use href="#i-file"/></svg><div class="grow"><div class="n">health_check_2026-08.pdf</div><div class="m"><span data-i18n="detail.doc_health">Health check</span> · 2.3 MB</div></div><span class="badge badge-success" data-i18n="detail.doc_shareable">Shareable</span><button class="btn btn-ghost btn-icon btn-sm"><svg class="ic"><use href="#i-download"/></svg></button><button class="btn btn-ghost btn-icon btn-sm"><svg class="ic"><use href="#i-more"/></svg></button></div>
+      <button class="btn" style="align-self:flex-start"><svg class="ic"><use href="#i-plus"/></svg><span data-i18n="form.add_document">Add document</span></button>
+    </div>
+  </div>
+
+  <!-- SHARE LINKS -->
+  <div class="tab-panel" data-tab-panel="links" hidden>
+    <div class="card"><div class="table-wrap"><table class="table">
+      <thead><tr><th data-i18n="shares.link">Share link</th><th data-i18n="shares.client">Client</th><th data-i18n="shares.protection">Protection</th><th class="num" data-i18n="detail.views_this">Views of this CV</th><th data-i18n="common.expires">Expires</th><th data-i18n="common.status">Status</th><th></th></tr></thead>
+      <tbody>
+        <tr><td><a href="share-detail.html" class="cell-primary">ヤマト建設様 溶接候補者</a><div class="cell-sub mono">rireki.app/s/8fK2…Qx</div></td><td>株式会社ヤマト建設</td><td class="row"><span class="badge"><svg class="ic"><use href="#i-lock"/></svg><span data-i18n="shares.password">Password</span></span><span class="badge badge-warning"><svg class="ic"><use href="#i-eye"/></svg><span data-i18n="shares.view_only">View only</span></span></td><td class="num">24 · 3 <span class="faint" data-i18n="common.unique_short">unique</span></td><td class="nowrap">3 Oct 2026</td><td><span class="badge badge-success badge-dot" data-i18n="common.active">Active</span></td><td><div class="row-actions"><button class="btn btn-ghost btn-icon btn-sm" data-copy="https://saoviet.rireki.app/s/8fK2mQx" title="Copy link"><svg class="ic"><use href="#i-copy"/></svg></button><a class="btn btn-ghost btn-icon btn-sm" href="share-detail.html"><svg class="ic"><use href="#i-chev-right"/></svg></a></div></td></tr>
+        <tr><td><a href="share-detail.html" class="cell-primary">Nguyễn Văn An 個別リンク</a><div class="cell-sub mono">rireki.app/s/p3Ld…9a</div></td><td>東海協同組合</td><td class="row"><span class="badge badge-outline"><svg class="ic"><use href="#i-unlock"/></svg><span data-i18n="shares.no_password">No password</span></span><span class="badge badge-info"><svg class="ic"><use href="#i-download"/></svg><span data-i18n="shares.download_allowed">Download allowed</span></span></td><td class="num">7 · 3 <span class="faint" data-i18n="common.unique_short">unique</span></td><td class="nowrap">31 Oct 2026</td><td><span class="badge badge-success badge-dot" data-i18n="common.active">Active</span></td><td><div class="row-actions"><button class="btn btn-ghost btn-icon btn-sm" data-copy="https://saoviet.rireki.app/s/p3Ldk9a" title="Copy link"><svg class="ic"><use href="#i-copy"/></svg></button><a class="btn btn-ghost btn-icon btn-sm" href="share-detail.html"><svg class="ic"><use href="#i-chev-right"/></svg></a></div></td></tr>
+        <tr style="opacity:.6"><td><span class="cell-primary">6月提案 溶接3名</span><div class="cell-sub mono">rireki.app/s/Ke01…7h</div></td><td>株式会社ヤマト建設</td><td class="row"><span class="badge"><svg class="ic"><use href="#i-lock"/></svg><span data-i18n="shares.password">Password</span></span><span class="badge badge-warning"><svg class="ic"><use href="#i-eye"/></svg><span data-i18n="shares.view_only">View only</span></span></td><td class="num">12 · 2 <span class="faint" data-i18n="common.unique_short">unique</span></td><td class="nowrap">30 Jun 2026</td><td><span class="badge badge-dot" data-i18n="common.expired">Expired</span></td><td></td></tr>
+      </tbody></table></div></div>
+  </div>
+
+  <!-- ACTIVITY -->
+  <div class="tab-panel" data-tab-panel="activity" hidden>
+    <div class="card" style="max-width:760px"><div class="card-body"><ul class="timeline">
+      <li><span class="dot"><svg class="ic"><use href="#i-eye"/></svg></span><div><div><b>田中 健一</b> (ヤマト建設) <span data-i18n="act.viewed_cv">viewed the 履歴書 and played</span> 自己紹介（日本語） (100%)</div><div class="when">09:42 <span data-i18n="common.today">today</span> · Desktop · Nagoya</div></div></li>
+      <li><span class="dot"><svg class="ic"><use href="#i-star"/></svg></span><div><div><b>田中 健一</b> <span data-i18n="act.marked_interested">marked this candidate as "Interested"</span></div><div class="when">09:47 <span data-i18n="common.today">today</span></div></div></li>
+      <li><span class="dot"><svg class="ic"><use href="#i-refresh"/></svg></span><div><div><b>Phạm Thu Trang</b> <span data-i18n="act.status_changed">changed status</span> <span class="badge badge-info" data-i18n="status.available">Available</span> → <span class="badge badge-success" data-i18n="status.proposed">Proposed</span></div><div class="when">28 Sep 2026</div></div></li>
+      <li><span class="dot"><svg class="ic"><use href="#i-link"/></svg></span><div><div><b>Phạm Thu Trang</b> <span data-i18n="act.added_to_link">added this candidate to</span> ヤマト建設様 溶接候補者</div><div class="when">26 Sep 2026</div></div></li>
+      <li><span class="dot"><svg class="ic"><use href="#i-video"/></svg></span><div><div><b>Lê Văn Tùng</b> <span data-i18n="act.uploaded_video_solo">uploaded video</span> 面接練習 Q&amp;A</div><div class="when">20 Sep 2026</div></div></li>
+      <li><span class="dot"><svg class="ic"><use href="#i-sparkles"/></svg></span><div><div><b>Lê Văn Tùng</b> <span data-i18n="act.created_from_import">created this candidate from</span> CV_NguyenVanAn_original.docx</div><div class="when">12 May 2026</div></div></li>
+    </ul></div></div>
+  </div>
+
+  <!-- NOTES -->
+  <div class="tab-panel" data-tab-panel="notes" hidden>
+    <div class="stack" style="max-width:760px">
+      <div class="callout"><svg class="ic"><use href="#i-lock"/></svg><span data-i18n="detail.notes_hint">Notes are visible to your team only. They are never shown to clients.</span></div>
+      <div class="card"><div class="card-body stack"><textarea class="textarea" placeholder="Add a note for your team…" data-i18n-placeholder="detail.note_ph"></textarea><div class="row" style="justify-content:flex-end"><button class="btn btn-primary" data-i18n="detail.add_note">Add note</button></div></div></div>
+      <div class="card"><div class="card-body"><div class="row between"><div class="person"><span class="avatar avatar-sm">TT</span><div><div class="n">Phạm Thu Trang</div><div class="k">28 Sep 2026 · 14:10</div></div></div><button class="btn btn-ghost btn-icon btn-sm"><svg class="ic"><use href="#i-more"/></svg></button></div><p class="mt-12">Yamato asked for a welding test video with 3G position; already uploaded. Interview tentatively 8 Oct 10:00 JST via Zoom.</p></div></div>
+    </div>
+  </div>
+</main>
+</div>
+</div>
+<div class="scrim" data-nav-close></div>
+<div class="toasts" id="toasts"></div>
+<script src="../assets/i18n.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

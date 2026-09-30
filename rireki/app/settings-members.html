@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en" data-app="tenant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Members & roles · Rireki</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+Myanmar:wght@400;600&family=Noto+Serif+JP:wght@500;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar" id="sidebar" aria-label="Main navigation">
+  <div class="brand"><div class="brand-mark">履</div><div><div class="brand-name">Rireki</div><div class="brand-sub">履歴書クラウド</div></div></div>
+  <div class="tenant"><span class="avatar">SV</span><div class="grow"><div class="tenant-name truncate">Sao Việt Manpower</div><div class="tenant-domain truncate">saoviet.rireki.app</div></div></div>
+  <nav class="nav">
+    <a href="dashboard.html"><svg class="ic"><use href="#i-home"/></svg><span data-i18n="nav.dashboard">Dashboard</span></a>
+    <a href="candidates.html"><svg class="ic"><use href="#i-users"/></svg><span data-i18n="nav.candidates">Candidates</span><span class="count">182</span></a>
+    <a href="shares.html"><svg class="ic"><use href="#i-link"/></svg><span data-i18n="nav.shares">Share links</span><span class="count">14</span></a>
+  </nav>
+  <div class="nav-group eyebrow" data-i18n="nav.manage">Manage</div>
+  <nav class="nav">
+    <a href="settings-members.html" class="active"><svg class="ic"><use href="#i-user-check"/></svg><span data-i18n="nav.members">Members</span></a>
+    <a href="settings-company.html"><svg class="ic"><use href="#i-settings"/></svg><span data-i18n="nav.settings">Settings</span></a>
+    <a href="settings-company.html#audit"><svg class="ic"><use href="#i-list"/></svg><span data-i18n="nav.audit">Audit log</span></a>
+  </nav>
+  <div class="sidebar-foot">
+    <div class="usage"><div class="row between"><span class="strong">Pro</span><span class="faint nums">182 / 500</span></div><div class="bar"><i style="width:36%"></i></div><span class="faint" data-i18n="nav.usage">candidates used</span></div>
+    <div class="me"><span class="avatar">NH</span><div><div class="name">Nguyễn Thị Hương</div><div class="role" data-i18n="role.admin">Admin</div></div></div>
+  </div>
+</aside>
+<div class="app-main">
+<header class="topbar">
+  <button class="btn btn-ghost btn-icon hamburger" data-nav-toggle aria-label="Menu"><svg class="ic"><use href="#i-menu"/></svg></button>
+  <div class="search input-wrap"><svg class="ic"><use href="#i-search"/></svg><input class="input input-sm" placeholder="Search code, name, katakana…" data-i18n-placeholder="nav.search"></div>
+  <div class="spacer"></div>
+  <div data-lang-switch></div>
+  <button class="btn btn-ghost btn-icon" data-theme-toggle aria-label="Toggle theme"><svg class="ic"><use href="#i-moon"/></svg></button>
+  <button class="btn btn-ghost btn-icon" aria-label="Notifications" style="position:relative"><svg class="ic"><use href="#i-bell"/></svg><span style="position:absolute;top:7px;right:8px;width:7px;height:7px;border-radius:50%;background:var(--vermilion)"></span></button>
+  <details class="menu">
+    <summary class="btn btn-ghost" style="padding:0 6px"><span class="avatar avatar-sm">NH</span><svg class="ic ic-sm"><use href="#i-chev-down"/></svg></summary>
+    <div class="menu-list">
+      <div class="menu-head">huong.nguyen@saoviet.vn</div>
+      <a href="#"><svg class="ic"><use href="#i-user"/></svg><span data-i18n="nav.profile">My profile</span></a>
+      <a href="settings-company.html"><svg class="ic"><use href="#i-settings"/></svg><span data-i18n="nav.settings">Settings</span></a>
+      <hr>
+      <a href="login.html"><svg class="ic"><use href="#i-logout"/></svg><span data-i18n="nav.logout">Sign out</span></a>
+    </div>
+  </details>
+</header>
+<main class="main" id="main">
+  <div class="page-header">
+    <div><h1 data-i18n="nav.settings">Settings</h1><p class="sub" data-i18n="settings.sub">Workspace of Sao Việt Manpower · saoviet.rireki.app</p></div>
+  </div>
+  <div class="grid grid-aside-main" style="grid-template-columns:220px minmax(0,1fr)">
+    <nav class="subnav">
+      <a href="settings-company.html"><svg class="ic"><use href="#i-building"/></svg><span data-i18n="settings.company">Company</span></a>
+      <a href="settings-members.html" class="active"><svg class="ic"><use href="#i-users"/></svg><span data-i18n="nav.members">Members & roles</span></a>
+      <a href="settings-company.html#branding"><svg class="ic"><use href="#i-image"/></svg><span data-i18n="settings.branding">Branding</span></a>
+      <a href="settings-company.html#security"><svg class="ic"><use href="#i-shield"/></svg><span data-i18n="settings.security">Security & defaults</span></a>
+      <a href="settings-company.html#billing"><svg class="ic"><use href="#i-card"/></svg><span data-i18n="settings.billing">Plan & billing</span></a>
+      <a href="settings-company.html#audit"><svg class="ic"><use href="#i-list"/></svg><span data-i18n="nav.audit">Audit log</span></a>
+    </nav>
+    <div class="stack-lg">
+      <div class="row between">
+        <div><h2 data-i18n="nav.members">Members & roles</h2><p class="muted small">2 <span data-i18n="role.admins">admins</span> · 5 <span data-i18n="role.users">users</span> · 1 <span data-i18n="common.invited_lc">invited</span> · <span data-i18n="members.seats">8 of 15 seats used</span></p></div>
+        <button class="btn btn-primary" data-modal-open="inviteModal"><svg class="ic"><use href="#i-plus"/></svg><span data-i18n="members.invite">Invite member</span></button>
+      </div>
+
+      <section class="card">
+        <div class="table-toolbar"><div class="search input-wrap"><svg class="ic"><use href="#i-search"/></svg><input class="input input-sm" placeholder="Name or email" data-i18n-placeholder="members.search_ph"></div><select class="select select-sm" style="width:auto"><option data-i18n="common.role">Role</option><option data-i18n="role.admin">Admin</option><option data-i18n="role.user">User</option></select><select class="select select-sm" style="width:auto"><option data-i18n="members.branch">Branch</option><option>Hà Nội HQ</option><option>Yangon</option><option>Dhaka</option></select></div>
+        <div class="table-wrap"><table class="table">
+          <thead><tr><th data-i18n="members.member">Member</th><th data-i18n="common.role">Role</th><th data-i18n="members.branch">Branch</th><th>2FA</th><th data-i18n="common.status">Status</th><th data-i18n="members.last_active">Last active</th><th></th></tr></thead>
+          <tbody>
+            <tr><td><div class="person"><span class="avatar">NH</span><div><div class="n">Nguyễn Thị Hương <span class="badge badge-outline" data-i18n="common.you">you</span></div><div class="k">huong.nguyen@saoviet.vn</div></div></div></td><td><select class="select select-sm" style="width:auto"><option data-i18n="role.admin">Admin</option><option data-i18n="role.user">User</option></select></td><td>Hà Nội HQ</td><td><span class="badge badge-success"><svg class="ic"><use href="#i-check"/></svg>On</span></td><td><span class="badge badge-success badge-dot" data-i18n="common.active">Active</span></td><td class="small muted" data-i18n="common.now">now</td><td></td></tr>
+            <tr><td><div class="person"><span class="avatar">LT</span><div><div class="n">Lê Văn Tùng</div><div class="k">tung.le@saoviet.vn</div></div></div></td><td><select class="select select-sm" style="width:auto"><option data-i18n="role.admin">Admin</option><option data-i18n="role.user">User</option></select></td><td>Hà Nội HQ</td><td><span class="badge badge-success"><svg class="ic"><use href="#i-check"/></svg>On</span></td><td><span class="badge badge-success badge-dot" data-i18n="common.active">Active</span></td><td class="small muted">17:50 <span data-i18n="common.yesterday">yesterday</span></td><td><div class="row-actions"><details class="menu"><summary class="btn btn-ghost btn-icon btn-sm"><svg class="ic"><use href="#i-more"/></svg></summary><div class="menu-list"><button><svg class="ic"><use href="#i-key"/></svg><span data-i18n="members.reset_2fa">Reset 2FA</span></button><button><svg class="ic"><use href="#i-ban"/></svg><span data-i18n="members.suspend">Suspend</span></button><hr><button class="danger"><svg class="ic"><use href="#i-trash"/></svg><span data-i18n="members.remove">Remove from workspace</span></button></div></details></div></td></tr>
+            <tr><td><div class="person"><span class="avatar">TT</span><div><div class="n">Phạm Thu Trang</div><div class="k">trang.pham@saoviet.vn</div></div></div></td><td><select class="select select-sm" style="width:auto"><option data-i18n="role.user">User</option><option data-i18n="role.admin">Admin</option></select></td><td>Hà Nội HQ</td><td><span class="badge badge-success"><svg class="ic"><use href="#i-check"/></svg>On</span></td><td><span class="badge badge-success badge-dot" data-i18n="common.active">Active</span></td><td class="small muted">10:05 <span data-i18n="common.today">today</span></td><td><div class="row-actions"><button class="btn btn-ghost btn-icon btn-sm"><svg class="ic"><use href="#i-more"/></svg></button></div></td></tr>
+            <tr><td><div class="person"><span class="avatar">AM</span><div><div class="n">Aung Myat</div><div class="k">aung.myat@saoviet.vn</div></div></div></td><td><select class="select select-sm" style="width:auto"><option data-i18n="role.user">User</option><option data-i18n="role.admin">Admin</option></select></td><td>Yangon</td><td><span class="badge badge-warning">Off</span></td><td><span class="badge badge-success badge-dot" data-i18n="common.active">Active</span></td><td class="small muted">09:31 <span data-i18n="common.today">today</span></td><td><div class="row-actions"><button class="btn btn-ghost btn-icon btn-sm"><svg class="ic"><use href="#i-more"/></svg></button></div></td></tr>
+            <tr><td><div class="person"><span class="avatar">MK</span><div><div class="n">Md. Karim Hossain</div><div class="k">karim@saoviet.vn</div></div></div></td><td><select class="select select-sm" style="width:auto"><option data-i18n="role.user">User</option><option data-i18n="role.admin">Admin</option></select></td><td>Dhaka</td><td><span class="badge badge-success"><svg class="ic"><use href="#i-check"/></svg>On</span></td><td><span class="badge badge-success badge-dot" data-i18n="common.active">Active</span></td><td class="small muted">25 Sep</td><td><div class="row-actions"><button class="btn btn-ghost btn-icon btn-sm"><svg class="ic"><use href="#i-more"/></svg></button></div></td></tr>
+            <tr><td><div class="person"><span class="avatar">TM</span><div><div class="n">Trần Minh</div><div class="k">minh.tran@saoviet.vn</div></div></div></td><td><span class="badge" data-i18n="role.user">User</span></td><td>Hà Nội HQ</td><td>—</td><td><span class="badge badge-info badge-dot" data-i18n="common.invited">Invited</span> <span class="small muted" data-i18n="members.expires_3d">expires in 3 days</span></td><td class="small muted">—</td><td><div class="row-actions"><button class="btn btn-sm" data-i18n="members.resend">Resend</button><button class="btn btn-ghost btn-icon btn-sm"><svg class="ic"><use href="#i-x"/></svg></button></div></td></tr>
+            <tr style="opacity:.7"><td><div class="person"><span class="avatar">ĐL</span><div><div class="n">Đỗ Thị Lan</div><div class="k">lan.do@saoviet.vn</div></div></div></td><td><span class="badge" data-i18n="role.user">User</span></td><td>Hà Nội HQ</td><td>—</td><td><span class="badge badge-danger badge-dot" data-i18n="common.suspended">Suspended</span></td><td class="small muted">12 Aug</td><td><div class="row-actions"><button class="btn btn-sm" data-i18n="members.reactivate">Reactivate</button></div></td></tr>
+          </tbody></table></div>
+      </section>
+
+      <section class="card">
+        <div class="card-header"><h3 data-i18n="members.roles_t">What each role can do</h3><span class="small muted" data-i18n="members.roles_d">Every workspace needs at least one admin.</span></div>
+        <div class="table-wrap"><table class="table matrix">
+          <thead><tr><th data-i18n="members.permission">Permission</th><th data-i18n="role.admin">Admin</th><th data-i18n="role.user">User</th></tr></thead>
+          <tbody>
+            <tr><td data-i18n="perm.candidates_edit">Add, edit and import candidates</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr><td data-i18n="perm.candidates_archive">Archive or delete candidates</td><td class="y">✓</td><td class="p" data-i18n="perm.own_only">own only</td></tr>
+            <tr><td data-i18n="perm.links_create">Create share links and see their tracking</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr><td data-i18n="perm.links_revoke">Revoke or edit any share link</td><td class="y">✓</td><td class="p" data-i18n="perm.own_only">own only</td></tr>
+            <tr><td data-i18n="perm.links_download">Create links that allow download</td><td class="y">✓</td><td class="p" data-i18n="perm.if_enabled">if enabled in Security</td></tr>
+            <tr><td data-i18n="perm.export">Export candidates (Excel / PDF)</td><td class="y">✓</td><td class="n">—</td></tr>
+            <tr><td data-i18n="perm.members">Invite, suspend and remove members</td><td class="y">✓</td><td class="n">—</td></tr>
+            <tr><td data-i18n="perm.settings">Company settings, branding, security defaults</td><td class="y">✓</td><td class="n">—</td></tr>
+            <tr><td data-i18n="perm.billing">Plan & billing</td><td class="y">✓</td><td class="n">—</td></tr>
+            <tr><td data-i18n="perm.audit">Audit log</td><td class="y">✓</td><td class="n">—</td></tr>
+          </tbody></table></div>
+      </section>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="inviteModal" hidden>
+    <form class="modal" onsubmit="event.preventDefault(); document.getElementById('inviteModal').hidden=true; window.RirekiUI&&RirekiUI.toast('Invitation sent');">
+      <div class="card-header"><h3 data-i18n="members.invite">Invite member</h3><button class="btn btn-ghost btn-icon" type="button" data-modal-close aria-label="Close"><svg class="ic"><use href="#i-x"/></svg></button></div>
+      <div class="card-body stack">
+        <div class="field"><label class="label" data-i18n="members.invite_emails">Email addresses</label><textarea class="textarea" style="min-height:70px" placeholder="one per line or comma-separated" data-i18n-placeholder="members.invite_emails_ph">minh.tran@saoviet.vn</textarea></div>
+        <div class="form-grid"><div class="field"><label class="label" data-i18n="common.role">Role</label><select class="select"><option data-i18n="role.user">User</option><option data-i18n="role.admin">Admin</option></select></div><div class="field"><label class="label" data-i18n="members.branch">Branch</label><select class="select"><option>Hà Nội HQ</option><option>Yangon</option><option>Dhaka</option></select></div></div>
+        <div class="field"><label class="label" data-i18n="members.invite_lang">Invitation language</label><select class="select"><option>Tiếng Việt</option><option>English</option><option>日本語</option><option>မြန်မာ</option><option>Bahasa Indonesia</option></select></div>
+        <p class="hint" data-i18n="members.invite_hint">Invitees set their own password and must enable 2FA if the Security settings require it. Invitations expire after 7 days.</p>
+      </div>
+      <div class="card-footer"><button class="btn" type="button" data-modal-close data-i18n="common.cancel">Cancel</button><button class="btn btn-primary" type="submit"><svg class="ic"><use href="#i-send"/></svg><span data-i18n="members.send_invites">Send invitation</span></button></div>
+    </form>
+  </div>
+</main>
+</div>
+</div>
+<div class="scrim" data-nav-close></div>
+<div class="toasts" id="toasts"></div>
+<script src="../assets/i18n.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

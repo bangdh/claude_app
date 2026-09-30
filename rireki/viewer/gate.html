@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ja" data-app="viewer">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sao Việt Manpower · 候補者のご確認</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+Myanmar:wght@400;600&family=Noto+Serif+JP:wght@500;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="auth" style="grid-template-columns:minmax(0,1fr)">
+  <main class="auth-main">
+    <div class="top">
+      <div class="viewer-brand"><span class="logo">SV</span><div><div class="n">Sao Việt Manpower</div><div class="s">サオベト人材株式会社</div></div></div>
+      <div class="row-nowrap"><div data-lang-switch></div><button class="btn btn-ghost btn-icon" data-theme-toggle aria-label="Toggle theme"><svg class="ic"><use href="#i-moon"/></svg></button></div>
+    </div>
+    <form class="auth-card" onsubmit="event.preventDefault(); location.href='list.html'">
+      <div class="stack" style="gap:6px">
+        <span class="eyebrow" data-i18n="viewer.invited">You have been invited to view</span>
+        <h1>ヤマト建設様 溶接候補者</h1>
+        <p class="muted">5 <span data-i18n="common.candidates_lc">candidates</span> · <span data-i18n="viewer.from">from</span> Sao Việt Manpower · <span data-i18n="viewer.valid_until">available until</span> 2026年10月3日</p>
+      </div>
+      <div class="card" style="background:var(--surface-2);box-shadow:none"><div class="card-body" style="padding:14px;font-size:13.5px;line-height:1.7">田中様　お世話になっております。溶接職種の候補者5名の履歴書と自己紹介動画をご確認ください。<div class="small muted mt-8">— Nguyễn Thị Hương, Sao Việt Manpower</div></div></div>
+      <div class="field">
+        <label class="label" for="vpw"><span data-i18n="viewer.password">Password</span> <span class="hint" style="font-weight:400" data-i18n="viewer.password_hint">(sent to you separately by the sender)</span></label>
+        <div class="input-wrap" style="display:flex"><svg class="ic"><use href="#i-key"/></svg><input id="vpw" class="input" type="password" placeholder="••••-••••-•••" style="padding-right:40px"><button type="button" class="btn btn-ghost btn-icon btn-sm trail" data-pw-toggle="vpw" aria-label="Show"><svg class="ic"><use href="#i-eye"/></svg></button></div>
+      </div>
+      <div class="form-grid">
+        <div class="field"><label class="label" for="vname"><span data-i18n="viewer.your_name">Your name</span><span class="req">*</span></label><input id="vname" class="input" placeholder="田中 健一"></div>
+        <div class="field"><label class="label" for="vmail"><span data-i18n="viewer.your_email">Work email</span><span class="req">*</span></label><input id="vmail" class="input" type="email" placeholder="tanaka@yamato-k.co.jp"><span class="hint">@yamato-k.co.jp</span></div>
+      </div>
+      <button class="btn btn-primary btn-lg btn-block" type="submit"><svg class="ic"><use href="#i-unlock"/></svg><span data-i18n="viewer.open">Open candidates</span></button>
+      <div class="callout small"><svg class="ic"><use href="#i-eye"/></svg><div><b data-i18n="viewer.viewonly_t">View-only link</b><br><span data-i18n="viewer.viewonly_d">Documents and videos can be viewed but not downloaded, printed or copied. Your name, email and viewing time are shown as a watermark and recorded for the sender.</span></div></div>
+      <p class="xs faint center"><span data-i18n="viewer.terms">By continuing you agree to use this information only for recruitment purposes and not to share it with third parties.</span></p>
+    </form>
+    <div class="center xs faint">Sao Việt Manpower JSC · Hà Nội · +84 24 3856 7890 · <span data-i18n="viewer.powered">Powered by</span> Rireki</div>
+  </main>
+</div>
+<div class="toasts" id="toasts"></div>
+<script src="../assets/i18n.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en" data-app="tenant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Candidates · Rireki</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+Myanmar:wght@400;600&family=Noto+Serif+JP:wght@500;700&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar" id="sidebar" aria-label="Main navigation">
+  <div class="brand"><div class="brand-mark">履</div><div><div class="brand-name">Rireki</div><div class="brand-sub">履歴書クラウド</div></div></div>
+  <div class="tenant"><span class="avatar">SV</span><div class="grow"><div class="tenant-name truncate">Sao Việt Manpower</div><div class="tenant-domain truncate">saoviet.rireki.app</div></div></div>
+  <nav class="nav">
+    <a href="dashboard.html"><svg class="ic"><use href="#i-home"/></svg><span data-i18n="nav.dashboard">Dashboard</span></a>
+    <a href="candidates.html" class="active"><svg class="ic"><use href="#i-users"/></svg><span data-i18n="nav.candidates">Candidates</span><span class="count">182</span></a>
+    <a href="shares.html"><svg class="ic"><use href="#i-link"/></svg><span data-i18n="nav.shares">Share links</span><span class="count">14</span></a>
+  </nav>
+  <div class="nav-group eyebrow" data-i18n="nav.manage">Manage</div>
+  <nav class="nav">
+    <a href="settings-members.html"><svg class="ic"><use href="#i-user-check"/></svg><span data-i18n="nav.members">Members</span></a>
+    <a href="settings-company.html"><svg class="ic"><use href="#i-settings"/></svg><span data-i18n="nav.settings">Settings</span></a>
+    <a href="settings-company.html#audit"><svg class="ic"><use href="#i-list"/></svg><span data-i18n="nav.audit">Audit log</span></a>
+  </nav>
+  <div class="sidebar-foot">
+    <div class="usage"><div class="row between"><span class="strong">Pro</span><span class="faint nums">182 / 500</span></div><div class="bar"><i style="width:36%"></i></div><span class="faint" data-i18n="nav.usage">candidates used</span></div>
+    <div class="me"><span class="avatar">NH</span><div><div class="name">Nguyễn Thị Hương</div><div class="role" data-i18n="role.admin">Admin</div></div></div>
+  </div>
+</aside>
+<div class="app-main">
+<header class="topbar">
+  <button class="btn btn-ghost btn-icon hamburger" data-nav-toggle aria-label="Menu"><svg class="ic"><use href="#i-menu"/></svg></button>
+  <div class="search input-wrap"><svg class="ic"><use href="#i-search"/></svg><input class="input input-sm" placeholder="Search code, name, katakana…" data-i18n-placeholder="nav.search"></div>
+  <div class="spacer"></div>
+  <div data-lang-switch></div>
+  <button class="btn btn-ghost btn-icon" data-theme-toggle aria-label="Toggle theme"><svg class="ic"><use href="#i-moon"/></svg></button>
+  <button class="btn btn-ghost btn-icon" aria-label="Notifications" style="position:relative"><svg class="ic"><use href="#i-bell"/></svg><span style="position:absolute;top:7px;right:8px;width:7px;height:7px;border-radius:50%;background:var(--vermilion)"></span></button>
+  <details class="menu">
+    <summary class="btn btn-ghost" style="padding:0 6px"><span class="avatar avatar-sm">NH</span><svg class="ic ic-sm"><use href="#i-chev-down"/></svg></summary>
+    <div class="menu-list">
+      <div class="menu-head">huong.nguyen@saoviet.vn</div>
+      <a href="#"><svg class="ic"><use href="#i-user"/></svg><span data-i18n="nav.profile">My profile</span></a>
+      <a href="settings-company.html"><svg class="ic"><use href="#i-settings"/></svg><span data-i18n="nav.settings">Settings</span></a>
+      <hr>
+      <a href="login.html"><svg class="ic"><use href="#i-logout"/></svg><span data-i18n="nav.logout">Sign out</span></a>
+    </div>
+  </details>
+</header>
+<main class="main" id="main">
+  <div class="page-header">
+    <div>
+      <h1 data-i18n="cand.title">Candidates</h1>
+      <p class="sub">182 <span data-i18n="common.candidates_lc">candidates</span> · 141 <span data-i18n="cand.with_video">with video</span> · 12 <span data-i18n="cand.updated_week">updated this week</span></p>
+    </div>
+    <div class="actions">
+      <a class="btn" href="candidate-import.html"><svg class="ic"><use href="#i-upload"/></svg><span data-i18n="cand.import">Import CV file</span></a>
+      <a class="btn btn-primary" href="candidate-new.html"><svg class="ic"><use href="#i-plus"/></svg><span data-i18n="cand.add">Add candidate</span></a>
+    </div>
+  </div>
+
+  <section class="card">
+    <div class="table-toolbar">
+      <div class="search input-wrap"><svg class="ic"><use href="#i-search"/></svg><input class="input input-sm" placeholder="Code, name, katakana, phone…" data-i18n-placeholder="cand.search_ph"></div>
+      <select class="select select-sm" style="width:auto" aria-label="Nationality"><option data-i18n="cand.nationality">Nationality</option><option>🇻🇳 Vietnam</option><option>🇲🇲 Myanmar</option><option>🇧🇩 Bangladesh</option><option>🇮🇩 Indonesia</option></select>
+      <select class="select select-sm" style="width:auto" aria-label="Job type"><option data-i18n="cand.job">Job type</option><option>溶接</option><option>介護</option><option>建設</option><option>食品加工</option><option>農業</option><option>機械加工</option></select>
+      <select class="select select-sm" style="width:auto" aria-label="JLPT"><option>JLPT</option><option>N2</option><option>N3</option><option>N4</option><option>N5</option></select>
+      <select class="select select-sm" style="width:auto" aria-label="Status"><option data-i18n="common.status">Status</option><option data-i18n="status.available">Available</option><option data-i18n="status.proposed">Proposed</option><option data-i18n="status.interviewing">Interviewing</option><option data-i18n="status.selected">Selected</option><option data-i18n="status.departed">Departed</option></select>
+      <button class="filter-chip active"><svg class="ic ic-sm"><use href="#i-video"/></svg><span data-i18n="cand.has_video">Has video</span></button>
+      <button class="btn btn-sm btn-ghost"><svg class="ic"><use href="#i-filter"/></svg><span data-i18n="common.more_filters">More filters</span></button>
+      <div class="grow"></div>
+      <div class="segmented" role="group" aria-label="View"><button class="active" data-i18n="common.table">Table</button><button data-i18n="common.cards">Cards</button></div>
+    </div>
+    <div class="bulk-bar" id="bulkBar">
+      <b><span id="selCount">3</span> <span data-i18n="common.selected">selected</span></b>
+      <a class="btn btn-sm btn-primary" href="share-new.html"><svg class="ic"><use href="#i-link"/></svg><span data-i18n="cand.bulk_share">Create share link</span></a>
+      <button class="btn btn-sm"><svg class="ic"><use href="#i-hash"/></svg><span data-i18n="cand.bulk_tag">Add tag</span></button>
+      <button class="btn btn-sm"><svg class="ic"><use href="#i-download"/></svg><span data-i18n="common.export">Export Excel</span></button>
+      <button class="btn btn-sm btn-ghost"><svg class="ic"><use href="#i-archive"/></svg><span data-i18n="common.archive">Archive</span></button>
+      <div class="grow"></div>
+      <button class="btn btn-sm btn-ghost" data-i18n="common.clear_selection">Clear selection</button>
+    </div>
+    <div class="table-wrap">
+      <table class="table" data-selectable>
+        <thead>
+          <tr>
+            <th style="width:36px"><input type="checkbox" data-select-all aria-label="Select all"></th>
+            <th data-i18n="cand.candidate">Candidate</th>
+            <th data-i18n="cand.code">Code</th>
+            <th data-i18n="cand.nationality">Nationality</th>
+            <th data-i18n="cand.gender_age">Gender · Age</th>
+            <th data-i18n="cand.job">Job type</th>
+            <th>JLPT</th>
+            <th data-i18n="cand.video">Video</th>
+            <th data-i18n="common.status">Status</th>
+            <th data-i18n="common.updated">Updated</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><input type="checkbox" checked aria-label="Select"></td><td><a class="person" href="candidate-detail.html"><span class="avatar-photo">NA</span><div><div class="n">Nguyễn Văn An</div><div class="k">グエン・バン・アン</div></div></a></td><td class="mono">SV-2024-0182</td><td><span class="cc"><span class="flag">🇻🇳</span>VN</span></td><td><span data-i18n="gender.m">Male</span> · 24</td><td>溶接</td><td><span class="badge badge-primary">N4</span></td><td class="nums"><span class="row-nowrap"><svg class="ic ic-sm muted"><use href="#i-video"/></svg>3</span></td><td><span class="badge badge-success badge-dot" data-i18n="status.proposed">Proposed</span></td><td class="small muted nowrap">28 Sep 2026</td><td><div class="row-actions"><a class="btn btn-ghost btn-icon btn-sm" href="share-new.html" title="Share"><svg class="ic"><use href="#i-link"/></svg></a><a class="btn btn-ghost btn-icon btn-sm" href="candidate-form.html" title="Edit"><svg class="ic"><use href="#i-edit"/></svg></a><details class="menu"><summary class="btn btn-ghost btn-icon btn-sm"><svg class="ic"><use href="#i-more"/></svg></summary><div class="menu-list"><a href="candidate-detail.html"><svg class="ic"><use href="#i-eye"/></svg><span data-i18n="common.view">View</span></a><a href="#"><svg class="ic"><use href="#i-download"/></svg><span data-i18n="cand.export_pdf">Export 履歴書 PDF</span></a><a href="#"><svg class="ic"><use href="#i-copy"/></svg><span data-i18n="common.duplicate">Duplicate</span></a><hr><a href="#" class="danger"><svg class="ic"><use href="#i-archive"/></svg><span data-i18n="common.archive">Archive</span></a></div></details></div></td></tr>
+          <tr><td><input type="checkbox" checked aria-label="Select"></td><td><a class="person" href="candidate-detail.html"><span class="avatar-photo">TM</span><div><div class="n">Trần Thị Mai</div><div class="k">チャン・ティ・マイ</div></div></a></td><td class="mono">SV-2024-0197</td><td><span class="cc"><span class="flag">🇻🇳</span>VN</span></td><td><span data-i18n="gender.f">Female</span> · 22</td><td>食品加工</td><td><span class="badge badge-primary">N4</span></td><td class="nums"><span class="row-nowrap"><svg class="ic ic-sm muted"><use href="#i-video"/></svg>1</span></td><td><span class="badge badge-info badge-dot" data-i18n="status.available">Available</span></td><td class="small muted nowrap">27 Sep 2026</td><td><div class="row-actions"><a class="btn btn-ghost btn-icon btn-sm" href="share-new.html" title="Share"><svg class="ic"><use href="#i-link"/></svg></a><a class="btn btn-ghost btn-icon btn-sm" href="candidate-form.html" title="Edit"><svg class="ic"><use href="#i-edit"/></svg></a><button class="btn btn-ghost btn-icon btn-sm"><svg class="ic"><use href="#i-more"/></svg></button></div></td></tr>
+          <tr><td><input type="checkbox" checked aria-label="Select"></td><td><a class="person" href="candidate-detail.html"><span class="avatar-photo">AK</span><div><div class="n">Aung Ko Ko</div><div class="k">アウン・コー・コー</div></div></a></td><td class="mono">SV-2024-0203</td><td><span class="cc"><span class="flag">🇲🇲</span>MM</span></td><td><span data-i18n="gender.m">Male</span> · 26</td><td>建設</td><td><span class="badge badge-primary">N5</span></td><td class="nums"><span class="row-nowrap"><svg class="ic ic-sm muted"><use href="#i-video"/></svg>2</span></td><td><span class="badge badge-info badge-dot" data-i18n="status.available">Available</span></td><td class="small muted nowrap">26 Sep 2026</td><td><div class="row-actions"><a class="btn btn-ghost btn-icon btn-sm" href="share-new.html" title="Share"><svg class="ic"><use href="#i-link"/></svg></a><a class="btn btn-ghost btn-icon btn-sm" href="candidate-form.html" title="Edit"><svg class="ic"><use href="#i-edit"/></svg></a><button class="btn btn-ghost btn-icon btn-sm"><svg class="ic"><use href="#i-more"/></svg></button></div></td></tr>
+          <tr><td><input type="checkbox" aria-label="Select"></td><td><a class="person" href="candidate-detail.html"><span class="avatar-photo">RU</span><div><div class="n">Md. Rahim Uddin</div><div class="k">ラヒム・ウディン</div></div></a></td><td class="mono">SV-2024-0211</td><td><span class="cc"><span class="flag">🇧🇩</span>BD</span></td><td><span data-i18n="gender.m">Male</span> · 25</td><td>農業</td><td><span class="badge badge-primary">N5</span></td><td class="nums"><span class="row-nowrap"><svg class="ic ic-sm" style="color:var(--warning)"><use href="#i-video"/></svg>0</span></td><td><span class="badge badge-info badge-dot" data-i18n="status.available">Available</span></td><td class="small muted nowrap">25 Sep 2026</td><td><div class="row-actions"><a class="btn btn-ghost btn-icon btn-sm" href="share-new.html" title="Share"><svg class="ic"><use href="#i-link"/></svg></a><a class="btn btn-ghost btn-icon btn-sm" href="candidate-form.html" title="Edit"><svg class="ic"><use href="#i-edit"/></svg></a><button class="btn btn-ghost btn-icon btn-sm"><svg class="ic"><use href="#i-more"/></svg></button></div></td></tr>
+          <tr><td><input type="checkbox" aria-label="Select"></td><td><a class="person" href="candidate-detail.html"><span class="avatar-photo">MĐ</span><div><div class="n">Phạm Minh Đức</div><div class="k">ファム・ミン・ドゥック</div></div></a></td><td class="mono">SV-2024-0215</td><td><span class="cc"><span class="flag">🇻🇳</span>VN</span></td><td><span data-i18n="gender.m">Male</span> · 23</td><td>機械加工</td><td><span class="badge badge-primary">N3</span></td><td class="nums"><span class="row-nowrap"><svg class="ic ic-sm muted"><use href="#i-video"/></svg>2</span></td><td><span class="badge badge-warning badge-dot" data-i18n="status.interviewing">Interviewing</span></td><td class="small muted nowrap">24 Sep 2026</td><td><div class="row-actions"><a class="btn btn-ghost btn-icon btn-sm" href="share-new.html" title="Share"><svg class="ic"><use href="#i-link"/></svg></a><a class="btn btn-ghost btn-icon btn-sm" href="candidate-form.html" title="Edit"><svg class="ic"><use href="#i-edit"/></svg></a><button class="btn btn-ghost btn-icon btn-sm"><svg class="ic"><use href="#i-more"/></svg></button></div></td></tr>
+          <tr><td><input type="checkbox" aria-label="Select"></td><td><a class="person" href="candidate-detail.html"><span class="avatar-photo">SH</span><div><div class="n">Su Su Hlaing</div><div class="k">スー・スー・ライン</div></div></a></td><td class="mono">SV-2024-0219</td><td><span class="cc"><span class="flag">🇲🇲</span>MM</span></td><td><span data-i18n="gender.f">Female</span> · 21</td><td>介護</td><td><span class="badge badge-primary">N3</span></td><td class="nums"><span class="row-nowrap"><svg class="ic ic-sm muted"><use href="#i-video"/></svg>2</span></td><td><span class="badge badge-success badge-dot" data-i18n="status.proposed">Proposed</span></td><td class="small muted nowrap">30 Sep 2026</td><td><div class="row-actions"><a class="btn btn-ghost btn-icon btn-sm" href="share-new.html" title="Share"><svg class="ic"><use href="#i-link"/></svg></a><a class="btn btn-ghost btn-icon btn-sm" href="candidate-form.html" title="Edit"><svg class="ic"><use href="#i-edit"/></svg></a><button class="btn btn-ghost btn-icon btn-sm"><svg class="ic"><use href="#i-more"/></svg></button></div></td></tr>
+          <tr><td><input type="checkbox" aria-label="Select"></td><td><a class="person" href="candidate-detail.html"><span class="avatar-photo">HL</span><div><div class="n">Lê Hoàng Long</div><div class="k">レ・ホアン・ロン</div></div></a></td><td class="mono">SV-2024-0224</td><td><span class="cc"><span class="flag">🇻🇳</span>VN</span></td><td><span data-i18n="gender.m">Male</span> · 27</td><td>自動車整備</td><td><span class="badge badge-primary">N4</span></td><td class="nums"><span class="row-nowrap"><svg class="ic ic-sm muted"><use href="#i-video"/></svg>1</span></td><td><span class="badge badge-dot" data-i18n="status.selected">Selected</span></td><td class="small muted nowrap">20 Sep 2026</td><td><div class="row-actions"><a class="btn btn-ghost btn-icon btn-sm" href="share-new.html" title="Share"><svg class="ic"><use href="#i-link"/></svg></a><a class="btn btn-ghost btn-icon btn-sm" href="candidate-form.html" title="Edit"><svg class="ic"><use href="#i-edit"/></svg></a><button class="btn btn-ghost btn-icon btn-sm"><svg class="ic"><use href="#i-more"/></svg></button></div></td></tr>
+          <tr><td><input type="checkbox" aria-label="Select"></td><td><a class="person" href="candidate-detail.html"><span class="avatar-photo">DL</span><div><div class="n">Dewi Lestari</div><div class="k">デウィ・レスタリ</div></div></a></td><td class="mono">SV-2024-0230</td><td><span class="cc"><span class="flag">🇮🇩</span>ID</span></td><td><span data-i18n="gender.f">Female</span> · 23</td><td>介護</td><td><span class="badge badge-primary">N3</span></td><td class="nums"><span class="row-nowrap"><svg class="ic ic-sm muted"><use href="#i-video"/></svg>1</span></td><td><span class="badge badge-success badge-dot" data-i18n="status.proposed">Proposed</span></td><td class="small muted nowrap">19 Sep 2026</td><td><div class="row-actions"><a class="btn btn-ghost btn-icon btn-sm" href="share-new.html" title="Share"><svg class="ic"><use href="#i-link"/></svg></a><a class="btn btn-ghost btn-icon btn-sm" href="candidate-form.html" title="Edit"><svg class="ic"><use href="#i-edit"/></svg></a><button class="btn btn-ghost btn-icon btn-sm"><svg class="ic"><use href="#i-more"/></svg></button></div></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pagination">
+      <span><span data-i18n="common.showing">Showing</span> 1–8 <span data-i18n="common.of">of</span> 182</span>
+      <div class="pages"><button aria-label="Previous"><svg class="ic ic-sm"><use href="#i-chev-left"/></svg></button><button class="active">1</button><button>2</button><button>3</button><span style="padding:0 4px">…</span><button>23</button><button aria-label="Next"><svg class="ic ic-sm"><use href="#i-chev-right"/></svg></button></div>
+      <span class="row-nowrap"><span data-i18n="common.per_page">Rows per page</span><select class="select select-sm" style="width:auto"><option>8</option><option>25</option><option>50</option></select></span>
+    </div>
+  </section>
+</main>
+</div>
+</div>
+<div class="scrim" data-nav-close></div>
+<div class="toasts" id="toasts"></div>
+<script src="../assets/i18n.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>
